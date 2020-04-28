@@ -2,61 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title> Drone Delivery Crusaders</title>
     <style>
+        #main-heading {
+            text-align: center;
+            font-family: Algerian;
+            font-size: 80px;
+            background-color: rebeccapurple;
+            margin: 20px;
+        }
 
+
+        .form{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <header>
 
+
+    <header>
+        <h1 id = "main-heading">Crusaders</h1>
     </header>
-    <form method="post" action="droe%20del%20page%201.html" id = "drone-code">
+
+
+    <form method="post" action="" id = "drone-code" class="form">
     <h3>Enter the ID of the drone wth the delivery</h3>
-    <label for="Drone_id"> Drone ID :</label>
-    <input id="Drone_id" type="text" name= " Drone id" required><br>
+    <label for="Drone-id"> Drone ID :</label>
+    <input id="Drone-id" type="text" name= " Drone id" required><br>
     <input type="submit" id="submit">
     </form>
 
 
 
-    <script>
-        var droneCode = document.getElementById("drone-code")
+    <script>                                                                    //script to format the form
+        var droneCode = document.getElementById("drone-code");
+
         var onCodeSubmit = function (e) {
+
+            // not to send data in first submit
             e.preventDefault()
-            var dest = document.createElement("div")
-            dest.innerHTML = " <form action=\"\" method=\"post\" id=\"hostel-to\">" +
+
+            //create a new div
+            var dest = document.createElement("div");
+
+            //req to disable form 1
+            var sub1 = document.getElementById("submit")
+
+            // to get the dta of form 1
+            var droneId = document.getElementById("Drone-id").value
+
+            //create form 2
+            dest.innerHTML = " <form action=\"\" method=\"post\" id=\"hostel-to\" class=\"form\">" +
                 "        <label for=\"hostel\">Choose the hostel for delivey</label><br>" +
-                "        <input id=\"hostel\" list=\"destination\"name=\"destination\" placeholder=\"Choose the hostel\">" +
+                "        <input id=\"hostel\" list=\"destination\"name=\"destination\" placeholder=\"Choose the hostel\" required>" +
                 "        <datalist id=\"destination\">" +
-                "            <option value=\"\"Main Gate></option>" +
-                "            <option value=\"Hostel 1\"></option>" +
-                "            <option value=\"Hostel 2\"></option>" +
-                "            <option value=\"Hostel 3\"></option>" +
-                "            <option value=\"Hostel 4\"></option>" +
-                "            <option value=\"Hostel 5\"></option>" +
-                "            <option value=\"Hostel 6\"></option>" +
-                "            <option value=\"Hostel 7\"></option>" +
-                "            <option value=\"Hostel 8\"></option>" +
-                "            <option value=\"Hostel 9\"></option>" +
-                "            <option value=\"Hostel 10\"></option>" +
-                "            <option value=\"Hostel 11\"></option>" +
-                "            <option value=\"Hostel 12\"></option>" +
-                "            <option value=\"Hostel 13\"></option>" +
-                "            <option value=\"Hostel 14\"></option>" +
-                "            <option value=\"Hostel 15\"></option>" +
-                "            <option value=\"Hostel 16\"></option>" +
-                "            <option value=\"Hostel 17\"></option>" +
-                "            <option value=\"Hostel 18\"></option>" +
-                "            <option value=\"Tansa House\"></option>" +
+                "            <option value=droneId+\",Main Gate\"></option>" +
+                "            <option value=droneId+\",Hostel 1\"></option>" +
+                "            <option value=droneId+\",Hostel 2\"></option>" +
+                "            <option value=droneId+\",Hostel 3\"></option>" +
+                "            <option value=droneId+\",Hostel 4\"></option>" +
+                "            <option value=droneId+\",Hostel 5\"></option>" +
+                "            <option value=droneId+\",Hostel 6\"></option>" +
+                "            <option value=droneId+\",Hostel 7\"></option>" +
+                "            <option value=droneId+\",Hostel 8\"></option>" +
+                "            <option value=droneId+\",Hostel 9\"></option>" +
+                "            <option value=droneId+\",Hostel 10\"></option>" +
+                "            <option value=droneId+\",Hostel 11\"></option>" +
+                "            <option value=droneId+\",Hostel 12\"></option>" +
+                "            <option value=droneId+\",Hostel 13\"></option>" +
+                "            <option value=droneId+\",Hostel 14\"></option>" +
+                "            <option value=droneId+\",Hostel 15\"></option>" +
+                "            <option value=droneId+\",Hostel 16\"></option>" +
+                "            <option value=droneId+\",Hostel 17\"></option>" +
+                "            <option value=droneId+\",Hostel 18\"></option>" +
+                "            <option value=droneId+\",Tansa House\"></option>" +
                 "        </datalist>\n" +
                 "        <input type=\"submit\">\n" +
                 "    </form>"
 
-            document.body.appendChild(dest)
 
-        }
-        droneCode.addEventListener("submit" , onCodeSubmit)
+            // add form 2 to webpage
+            document.body.appendChild(dest);
+
+            //disable form 1
+            sub1.remove()
+            document.getElementById("Drone-id").disabled = true;
+
+        };
+
+            //to respond to click
+            droneCode.addEventListener("submit" , onCodeSubmit);
     </script>
 </body>
 </html>
