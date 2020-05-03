@@ -1,6 +1,6 @@
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect,request
 from flask_sqlalchemy import SQLAlchemy
-from forms import droneIdCheck
+from forms import droneIdCheck,locationEntry
 
 app = Flask(__name__)
 app.config['SECRET_KEY']='koihackkarkedikhao'
