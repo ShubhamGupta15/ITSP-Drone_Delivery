@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel = "stylesheet" type = "text/css" href = "../Style Sheets/StyleDronePage_SS.css">
+    <meta charset="UTF-8">
+    <title> Drone Delivery Crusaders</title>
+    
+</head>
+<body>
+
+
+    <header>
+        <h1 id = "main-heading"><span class="orange" id="animate-C">C</span><span class="white">r</span><span class="white">u</span><span class="white">s</span><span class="white">a</span><span class="white">d</span><span class="white">e</span><span class="white">r</span><span class="orange">S</span></h1>
+        
+    </header>
+
+
+    <form method="post" action="" id = "drone-code" class="form">
+    <div id = "flex-container">
+    	<div class = "flex-container-item"><h3 class ="form-element">Enter the ID of the drone with the delivery</h3></div>
+    	<div class = "flex-container-item"><label for="Drone-id" class="form-element"> Drone ID :</label></div>
+	<div class = "flex-container-item"><input class="form-element" id="Drone-id" type="text" name= " Drone id" required><br></div>
+    	<div class = "flex-container-item"><input type="submit" class="form-element" id="submit"></div>
+    </div>
+    </form>
+
+
+    <script>                                                                    //script to format the form
+        var droneCode = document.getElementById("drone-code");
+
+        var onCodeSubmit = function (e) {
+
+            // not to send data in first submit
+            //e.preventDefault()
+
+            //create a new div
+            var dest = document.createElement("div");
+
+            //req to disable form 1
+            var sub1 = document.getElementById("submit")
+
+            // to get the dta of form 1
+            var droneId = document.getElementById("Drone-id").value
+
+            //create form 2
+            dest.innerHTML = " <form action=\"\" method=\"post\" id=\"hostel-to\" class=\"form\">" +
+                "        <label for=\"hostel\">Choose the hostel for delivey</label><br>" +
+                "        <input id=\"hostel\" list=\"destination\"name=\"destination\" placeholder=\"Choose the hostel\" required>" +
+                "        <datalist id=\"destination\">" +
+                "            <option value=droneId+\",Main Gate\"></option>" +
+                "            <option value=droneId+\",Hostel 1\"></option>" +
+                "            <option value=droneId+\",Hostel 2\"></option>" +
+                "            <option value=droneId+\",Hostel 3\"></option>" +
+                "            <option value=droneId+\",Hostel 4\"></option>" +
+                "            <option value=droneId+\",Hostel 5\"></option>" +
+                "            <option value=droneId+\",Hostel 6\"></option>" +
+                "            <option value=droneId+\",Hostel 7\"></option>" +
+                "            <option value=droneId+\",Hostel 8\"></option>" +
+                "            <option value=droneId+\",Hostel 9\"></option>" +
+                "            <option value=droneId+\",Hostel 10\"></option>" +
+                "            <option value=droneId+\",Hostel 11\"></option>" +
+                "            <option value=droneId+\",Hostel 12\"></option>" +
+                "            <option value=droneId+\",Hostel 13\"></option>" +
+                "            <option value=droneId+\",Hostel 14\"></option>" +
+                "            <option value=droneId+\",Hostel 15\"></option>" +
+                "            <option value=droneId+\",Hostel 16\"></option>" +
+                "            <option value=droneId+\",Hostel 17\"></option>" +
+                "            <option value=droneId+\",Hostel 18\"></option>" +
+                "            <option value=droneId+\",Tansa House\"></option>" +
+                "        </datalist>\n" +
+                "        <input type=\"submit\">\n" +
+                "    </form>"
+
+
+            // add form 2 to webpage
+            document.body.appendChild(dest);
+
+            //disable form 1
+            sub1.remove()
+            document.getElementById("Drone-id").disabled = true;
+
+        };
+
+            //to respond to click
+            droneCode.addEventListener("submit" , onCodeSubmit);
+    </script>
+</body>
+</html>
