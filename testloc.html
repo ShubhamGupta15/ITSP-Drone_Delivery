@@ -49,8 +49,7 @@ function showError(error) {
 }
 </script>
 </head>
-<body>
-    <button type="button" onclick="showPosition();">Show My Position on Google Map</button>
+<body onload = showPosition()>
     <div id="embedMap" style="width: 400px; height: 300px;">
         <!--Google map will be embedded here-->
     </div>
