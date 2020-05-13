@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b145b6e-c620-4669-8fe4-1ea573cfcc86" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HTML Pages.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DroneDelivery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Resources/bkg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Resources/bkg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Resources/bkg3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Style Sheets/StyleDronePage_SS.css" beforeDir="false" />
-    </list>
+    <list default="true" id="1b145b6e-c620-4669-8fe4-1ea573cfcc86" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +39,6 @@
       <option name="presentableId" value="Default" />
       <updated>1589219493557</updated>
       <workItem from="1589219494694" duration="315000" />
-      <workItem from="1589354914954" duration="120000" />
     </task>
     <servers />
   </component>
