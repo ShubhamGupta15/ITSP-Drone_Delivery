@@ -37,3 +37,5 @@
 
         //to respond to click
     submitButton.addEventListener( "click" , onSubmit);
+
+    var newvar = 2;
