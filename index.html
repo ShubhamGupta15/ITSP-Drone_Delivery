@@ -1,35 +1,64 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-<link rel = "stylesheet" type = "text/css" href = "CSS/StyleDronePage_SS.css">
-    <meta charset="UTF-8">
-    <title> Drone Delivery Crusaders</title>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use  https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
-     <script src="/__/firebase/7.14.3/firebase-auth.js"></script>
-    <script src="/__/firebase/7.14.3/firebase-firestore.js"></script>
-    
-</head>
-<body>
+    <head>
+    <link rel = "stylesheet" type = "text/css" href = "CSS/StyleDronePage_SS.css">
+        <meta charset="UTF-8">
+        <title> Drone Delivery Crusaders</title>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use  https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+
+    </head>
 
 
-    <header>
-        <h1 id = "main-heading"><span class="orange" id="animate-C">C</span><span class="white">r</span><span class="white">u</span><span class="white">s</span><span class="white">a</span><span class="white">d</span><span class="white">e</span><span class="white">r</span><span class="orange">S</span></h1>
-    </header>
+    <body>
 
 
-    <form method="post" action="" id = "drone-code" class="form">
-    <div id = "flex-container">
-    	<div class = "flex-container-item"><h3 class ="form-element">Enter the ID of the drone with the delivery</h3></div>
-    	<div class = "flex-container-item"><label for="Drone-id" class="form-element"> Drone ID :</label></div>
-	<div class = "flex-container-item"><input class="form-element" id="Drone-id" type="text" name= " Drone id" required><br></div>
-    	<div class = "flex-container-item"><input type="submit" class="form-element" id="submit"></div>
-    </div>
-    </form>
+        <header>
+            <h1 id = "main-heading"><span class="orange" id="animate-C">C</span><span class="white">r</span><span class="white">u</span><span class="white">s</span><span class="white">a</span><span class="white">d</span><span class="white">e</span><span class="white">r</span><span class="orange">S</span></h1>
+        </header>
 
-    <script src ="app.js"></script>
 
-</body>
+        <form method="post" action="" id = "drone-code" class="form">
+            <div id = "flex-container">
+                <div class = "flex-container-item"><h3 class ="form-element">Enter the ID of the drone with the delivery</h3></div>
+                <div class = "flex-container-item"><label for="Drone-id" class="form-element"> Drone ID :</label></div>
+                <div class = "flex-container-item"><input class="form-element" id="Drone-id" type="text" name= " Drone id" required><br></div>
+            </div>
+
+
+                <label for="hostel-to">Choose the hostel for delivey</label><br>
+                <input id="hostel-to" list="destination" name="destination" placeholder="Choose the hostel" required>
+                <datalist id="destination">
+                    <option value="Main Gate"></option>
+                    <option value="Hostel 1"></option>
+                    <option value="Hostel 2"></option>
+                    <option value="Hostel 3"></option>
+                    <option value="Hostel 4"></option>
+                    <option value="Hostel 5"></option>
+                    <option value="Hostel 6"></option>
+                    <option value="Hostel 7"></option>
+                    <option value="Hostel 8"></option>
+                    <option value="Hostel 9"></option>
+                    <option value="Hostel 10"></option>
+                    <option value="Hostel 11"></option>
+                    <option value="Hostel 12"></option>
+                    <option value="Hostel 13"></option>
+                    <option value="Hostel 14"></option>
+                    <option value="Hostel 15"></option>
+                    <option value="Hostel 16"></option>
+                    <option value="Hostel 17"></option>
+                    <option value="Hostel 18"></option>
+                    <option value="Tansa House"></option>
+                </datalist>
+                <input type="submit">
+        </form>
+
+
+        <script src ="JS/app.js"></script>
+
+    </body>
 </html>
