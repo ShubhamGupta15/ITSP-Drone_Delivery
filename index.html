@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
     <head>
-    <link rel = "stylesheet" type = "text/css" href = "CSS/StyleDronePage_SS.css">
+       <!-- <link rel = "stylesheet" type = "text/css" href = "CSS/StyleDronePage_SS.css"> -->
         <meta charset="UTF-8">
         <title> Drone Delivery Crusaders</title>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -25,13 +25,13 @@
         <main>
         <div id = "flex-container">
             <div class = "flex-container-item"><h3 class ="form-element">Enter the ID of the drone with the delivery</h3></div>
-            <div class = "flex-container-item"><label for="Drone-id" class="form-element"> Drone ID :</label></div>
-            <div class = "flex-container-item"><input class="form-element" id="Drone-id" type="text" name= " Drone id" required><br></div>
+            <div class = "flex-container-item"><label for="drone-id" class="form-element"> Drone ID :</label></div>
+            <div class = "flex-container-item"><input class="form-element" id="drone-id" type="text" required><br></div>
         </div>
 
 
             <label for="hostel-to">Choose the hostel for delivey</label><br>
-            <input id="hostel-to" list="destination" name="destination" placeholder="Choose the hostel" required>
+            <input id="hostel-to" list="destination" placeholder="Choose the hostel" required>
             <datalist id="destination">
                 <option value="Main Gate"></option>
                 <option value="Hostel 1"></option>
@@ -54,7 +54,7 @@
                 <option value="Hostel 18"></option>
                 <option value="Tansa House"></option>
             </datalist>
-        <button id = "Submit"></button>
+        <button id = "Submit">Submit</button>
         </main>
 
 
