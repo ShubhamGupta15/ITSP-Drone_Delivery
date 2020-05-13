@@ -20,8 +20,8 @@
     var onCodeSubmit = function (e) {
 
 
-
     };
 
         //to respond to click
         droneCode.addEventListener( "" , onCodeSubmit);
+        droneCode.addEventListener("submit" , onCodeSubmit);
