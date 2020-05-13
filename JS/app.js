@@ -19,27 +19,9 @@
 
     var onCodeSubmit = function (e) {
 
-        // not to send data in first submit
-        e.preventDefault()
 
-        //create a new div
-        var dest = document.createElement("div");
-
-        //req to disable form 1
-        var sub1 = document.getElementById("submit")
-
-        // to get the dta of form 1
-        var droneId = document.getElementById("Drone-id").value
-
-
-        // add form 2 to webpage
-        document.body.appendChild(dest);
-
-        //disable form 1
-        sub1.remove()
-        document.getElementById("Drone-id").disabled = true;
 
     };
 
         //to respond to click
-        droneCode.addEventListener("submit" , onCodeSubmit);
+        droneCode.addEventListener( "" , onCodeSubmit);
