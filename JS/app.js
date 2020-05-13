@@ -37,5 +37,8 @@
         });
     };
 
-        //to respond to click
+    //to respond to click
     submitButton.addEventListener( "click" , onSubmit);
+    submitButton.addEventListener("click", function () {
+        location.reload();
+    });
