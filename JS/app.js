@@ -39,5 +39,4 @@
 
         //to respond to click
     submitButton.addEventListener( "click" , onSubmit);
-
-    var new = 0;
+    
