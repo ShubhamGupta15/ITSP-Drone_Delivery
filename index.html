@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
     <head>
-       <link rel = "stylesheet" type = "text/css" href = "CSS/StyleDronePage_SS.css">
+       <!--<link rel = "stylesheet" type = "text/css" href = "CSS/StyleDronePage_SS.css">-->
         <meta charset="UTF-8">
         <title> Drone Delivery Crusaders</title>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -19,11 +19,14 @@
 
         <header>
             <h1 id = "main-heading"><span class="orange" id="animate-C">C</span><span class="white">r</span><span class="white">u</span><span class="white">s</span><span class="white">a</span><span class="white">d</span><span class="white">e</span><span class="white">r</span><span class="orange">S</span></h1>
+            <nav><a href="HTML/testloc.html">Tracking</a></nav>
+            <nav><a href = "HTML/about.html">About Us</a></nav>
         </header>
 
 
 
-        <main>
+        <section>
+            <form id ="loactionForm">
         <div id = "flex-container">
             <div class = "flex-container-item"><h3 class ="form-element">Enter the ID of the drone with the delivery</h3></div>
             <div class = "flex-container-item"><label for="drone-id" class="form-element"> Drone ID :</label></div>
@@ -54,10 +57,20 @@
             <option value="Hostel 17"></option>
             <option value="Hostel 18"></option>
             <option value="Tansa House"></option>
-        </datalist>
+        </datalist><br>
 
-        <button id = "Submit"> Submit </button>
-        </main>
+        <input type ="submit"  id = "SubmitDelivery">
+        </form>
+        </section>
+
+        <section>
+            <form id = "trackForm">
+            <h3>Enter the ID of Drone to track</h3>
+            <label for="drone-track">Drone ID</label><br>
+            <input id="drone-track" type="text" required><br>
+            <input id = "submitTrack" type="submit">
+            </form>
+        </section>
 
 
         <script src ="JS/app.js"></script>
