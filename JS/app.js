@@ -1,18 +1,19 @@
 
     // Your web app's Firebase configuration
-    var firebaseConfig = {
-    apiKey: "AIzaSyBh9XgJXNJXkpLgEwcU4d080MqhISukpCs",
-    authDomain: "drone-delivery-crusaders.firebaseapp.com",
-    databaseURL: "https://drone-delivery-crusaders.firebaseio.com",
-    projectId: "drone-delivery-crusaders",
-    storageBucket: "drone-delivery-crusaders.appspot.com",
-    messagingSenderId: "44700296781",
-    appId: "1:44700296781:web:d57c794e69eb75425e5e04",
-    measurementId: "G-NB4E645J64"
+    const firebaseConfig = {
+      apiKey: "AIzaSyBh9XgJXNJXkpLgEwcU4d080MqhISukpCs",
+      authDomain: "drone-delivery-crusaders.firebaseapp.com",
+      databaseURL: "https://drone-delivery-crusaders.firebaseio.com",
+      projectId: "drone-delivery-crusaders",
+      storageBucket: "drone-delivery-crusaders.appspot.com",
+      messagingSenderId: "44700296781",
+      appId: "1:44700296781:web:d57c794e69eb75425e5e04",
+      measurementId: "G-NB4E645J64"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+
     let firestore = firebase.firestore();
 
 
@@ -66,12 +67,12 @@
     //to respond to submisson of delivery form
     formLoc.addEventListener( "submit" , onSubmitDelivery);
     formLoc.addEventListener("submit", function () {
-        location.href = "HTML/testloc.html"
+        //location.href = "HTML/testloc.html"
     });
 
 
     //to repond to submisson of trackiing form
-    formTrack.addEventListener("sumbit" , onSubmitTrack);
+    formTrack.addEventListener("sumbit", onSubmitTrack);
     formTrack.addEventListener("submit", function () {
-        location.href = "HTML/testloc.html"
+        //location.href = "HTML/testloc.html"
     });
