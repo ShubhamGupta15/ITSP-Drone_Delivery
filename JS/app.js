@@ -18,22 +18,25 @@
 
 
     //document refrences to firebase database
-    const docRef1 = firestore.doc("data/drone data");
-    const docRef2 = firestore.doc("data/tracking data");
+    const docRef1 = firestore.doc("data/Delivery");
+    const docRef2 = firestore.doc("data/Tracking");
 
     //var for delivery form
-    let droneID = document.getElementById("drone-id").value;
-    let hostelToGo = document.getElementById("hostel-to").value;
+    let droneIDInput = document.getElementById("drone-id");
+    let hostelInput = document.getElementById("hostel-to");
     const formLoc = document.getElementById("locationForm");
 
 
     // var for tracking form
-    let droneIDTrack = document.getElementById("drone-track").value;
+    let droneIDTrackInput = document.getElementById("drone-track");
     let formTrack = document.getElementById("trackForm");
 
     //for data entry to database on response to delivery form
     var onSubmitDelivery = function (e) {
         e.preventDefault();
+
+        let droneID = droneIDInput.value;
+        let hostelToGo = hostelInput.value;
 
         docRef1.set({
             Drone: droneID,
@@ -47,11 +50,15 @@
         docRef2.set({
             trackingID: droneID
         });
+
+        //location.href = "HTML/testloc.html";
     };
 
     //for data entry on response to tracking form
     var onSubmitTrack = function (e) {
         e.preventDefault();
+
+        let droneIDTrack = droneIDTrackInput.value;
 
         docRef2.set({
             trackingID: droneIDTrack
@@ -60,19 +67,14 @@
         }).catch(function (err) {
                 console.log(err);
         });
+
+        //location.href = "HTML/testloc.html";
     };
 
 
 
     //to respond to submisson of delivery form
     formLoc.addEventListener( "submit" , onSubmitDelivery);
-    formLoc.addEventListener("submit", function () {
-        //location.href = "HTML/testloc.html"
-    });
 
-
-    //to repond to submisson of trackiing form
-    formTrack.addEventListener("sumbit", onSubmitTrack);
-    formTrack.addEventListener("submit", function () {
-        //location.href = "HTML/testloc.html"
-    });
+    //to respond to submisson of trackiing form
+    formTrack.addEventListener("submit", onSubmitTrack);
