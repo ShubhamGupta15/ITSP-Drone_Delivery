@@ -176,7 +176,11 @@ body {
     color: rgb(245, 245, 245);    
 }
 
-svg {
+#C {
+    color: rgb(246, 67, 67);
+}
+
+/*svg {
     position: absolute;
     right: 650px;
     height: 200px;
@@ -213,4 +217,4 @@ svg path {
     100% {
         d: path("M50,18 A 19 31 0 1 0 38,73");
     }
-}
+}*/
