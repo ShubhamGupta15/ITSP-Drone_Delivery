@@ -98,7 +98,7 @@
             name: '/location_input',
             messageType: 'std_msgs/String'
         });
-        var thespot = str(document.getElementById("destination"))
+        var thespot = document.getElementById("hostel-to").value;
         var hostel = new ROSLIB.Message({
             data: thespot,
         });
