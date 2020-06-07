@@ -18,7 +18,7 @@ void Info::SendWayPoints()
 
 void Info::clearWayPoints()
 {
-	if(ClearSrv.call(ClearSrv))
+	if(clientClear.call(ClearSrv))
 	{
 		if(ClearSrv.success)	
 			ROS_INFO("WAYPOINTS CLEARED");
