@@ -1,8 +1,10 @@
 #ifndef INFO_H
 #define INFO_H
 
-#include "mavros/Waypoint.h"
-#include "mavros/WaypointList.h"
+#include "mavros_msgs/Waypoint.h"
+#include "mavros_msgs/WaypointList.h"
+#include "mavros_msgs/WaypointPush.h"
+#include "mavros_msgs/WaypointClear.h"
 
 
 class Info
