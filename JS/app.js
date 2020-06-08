@@ -70,19 +70,30 @@
         });
 
         //Publishing
+        var thespot = hostelToGo;
+        var dronekaid = droneID;
         var lockey = new ROSLIB.Topic({
             ros: ros,
             name: '/location_input',
             messageType: 'std_msgs/String'
         });
-        var thespot = hostelToGo;
+
         var hostel = new ROSLIB.Message({
              data: thespot,
         });
         lockey.publish(hostel);
         console.log('Destination: ', thespot);
 
-        
+        var drone = new ROSLIB.Topic({
+            ros: ros,
+            name: '/drone_id',
+            messageType: 'std_msgs/String'
+        });
+        var droneneed = new ROSLIB.Message({
+            data: dronekaid,
+        });
+        lockey.publish(droneneed);
+        console.log('Destination: ', dronekaid);
         //reload page
         //location.href = "index.html";
 
