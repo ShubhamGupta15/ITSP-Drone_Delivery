@@ -111,6 +111,7 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;
     ros::NodeHandle p;
     ros::NodeHandle u;
+    ros::NodeHandle r;
 
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
             ("mavros/state", 10, state_cb);
@@ -126,11 +127,20 @@ int main(int argc, char **argv)
             ("/mavros/mission/clear");
     ros::ServiceClient set_home_client = u.serviceClient<mavros_msgs::CommandHome>
             ("mavros/cmd/set_home");
-
-    ros::Publisher location_pub = nh.advertise <std_msgs::String>
+    ros::Subscriber location_sub = nh.subscribe <std_msgs::String>
+            ("location_input", 100, waypoint_in);
+    ros::Publisher location_pub = r.advertise <std_msgs::String>
             ("location_input", 100);
     std_msgs::String ini;
     ini.data = "Hostel 5";
+    
+    ros::Rate rate(20.0);
+
+    while(location_pub.getNumSubscribers() == 0){
+        ros::spinOnce();
+        rate.sleep();
+    }
+
     location_pub.publish(ini);
 
     
@@ -142,8 +152,6 @@ int main(int argc, char **argv)
     set_home_srv.request.latitude = 19.12579446;
     set_home_srv.request.longitude = 72.91619611;
     set_home_srv.request.altitude = 10;
-
-    ros::Rate rate(20.0);
 
     while(ros::ok() && !current_state.connected){
         ros::spinOnce();
@@ -159,8 +167,8 @@ int main(int argc, char **argv)
 
     ros::Time last_request = ros::Time::now();
 
-
-
+    PushSrv.request.start_index = 0;
+	PushSrv.request.waypoints = listOfWP;
 
 
     if (set_home_client.call(set_home_srv))
@@ -186,11 +194,7 @@ int main(int argc, char **argv)
 	else
 		ROS_ERROR("------------------------------ERROR IN CALLING CLEAR SERVICE------------------------------");
 
-    ros::Subscriber location_sub = nh.subscribe <std_msgs::String>
-            ("location_input", 100, waypoint_in);
-    
-    PushSrv.request.start_index = 0;
-	PushSrv.request.waypoints = listOfWP;
+     
  
     if(clientPush.call(PushSrv))
 	{

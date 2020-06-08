@@ -75,16 +75,16 @@
             name: '/location_input',
             messageType: 'std_msgs/String'
         });
-        var thespot = document.getElementById("hostel-to").value;
+        var thespot = hostelToGo;
         var hostel = new ROSLIB.Message({
-            data: thespot,
+             data: thespot,
         });
         lockey.publish(hostel);
         console.log('Destination: ', thespot);
 
         
         //reload page
-        location.href = "index.html";
+        //location.href = "index.html";
 
 
     };
