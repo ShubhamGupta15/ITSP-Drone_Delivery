@@ -1,5 +1,5 @@
 
-//js fo communicating with ROS
+//js for communicating with ROS
 
 var ros = new ROSLIB.Ros({
             url : 'ws://localhost:9090'
