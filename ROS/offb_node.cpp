@@ -19,10 +19,7 @@ void waypoint_in(const std_msgs::String::ConstPtr& loc){
     bool wp_set = true;
     std_msgs::String loc_msg;
     loc_msg = *loc;
-    while(wp_set){
-        if (loc_msg.data == ""){
-            continue;
-        }
+   
         else if (loc_msg.data == "Hostel 5"){
             
             wp_set = false;
@@ -94,7 +91,7 @@ void waypoint_in(const std_msgs::String::ConstPtr& loc){
 
         } 
         //ros::spinOnce();
-    }
+    
     return;
 }
 
