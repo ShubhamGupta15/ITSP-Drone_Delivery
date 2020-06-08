@@ -68,6 +68,7 @@
         ros.on('close', function() {
             console.log('Connection to websocket server closed.');
         });
+
         //Publishing
         var lockey = new ROSLIB.Topic({
             ros: ros,
@@ -80,9 +81,11 @@
         });
         lockey.publish(hostel);
         console.log('Destination: ', thespot);
+
         
         //reload page
         location.href = "index.html";
+
 
     };
 
@@ -103,6 +106,7 @@
         });
 
         //location.href = "HTML/testloc.html";
+
     };
 
 
