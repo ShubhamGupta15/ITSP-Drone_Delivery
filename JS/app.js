@@ -70,8 +70,8 @@
         });
 
         //Publishing
-        //var thespot = hostelToGo;
-        //var dronekaid = droneID;
+        var thespot = hostelToGo;
+        var dronekaid = droneID;
         //var lockey = new ROSLIB.Topic({
            // ros: ros,
            // name: '/location_input',
