@@ -129,7 +129,7 @@ int main(int argc, char **argv)
             ("mavros/cmd/set_home");
     ros::Subscriber location_sub = nh.subscribe <offb::WpList>
             ("Data", 100, passData);
-    ros::Publisher location_pub = r.advertise <std_msgs::String>
+    /*ros::Publisher location_pub = r.advertise <std_msgs::String>
             ("location_input", 100);
     std_msgs::String ini;
     ini.data = "Hostel 5";
@@ -142,7 +142,7 @@ int main(int argc, char **argv)
     }
 
     location_pub.publish(ini);
-
+    */
     
     mavros_msgs::WaypointPush PushSrv;
 	mavros_msgs::WaypointClear ClearSrv;

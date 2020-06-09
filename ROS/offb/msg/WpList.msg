@@ -1,1 +1,1 @@
-mavros_msgs::Waypoint[] wpList;
+offb::Waypoint[] wpList

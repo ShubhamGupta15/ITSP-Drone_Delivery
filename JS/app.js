@@ -97,8 +97,8 @@
         //service def
         var web_inputClient = new ROSLIB.Service({
             ros : ros,
-            name : '/web_input',
-            serviceType : 'offb/webinput'  //instead of webinput add .srv file name which will be in offb/src
+            name : '/Web_Input',
+            serviceType : 'offb/Web_Input'  //instead of webinput add .srv file name which will be in offb/src
          });
         var request = new ROSLIB.ServiceRequest({
             DroneId : dronekaid,
