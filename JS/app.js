@@ -73,7 +73,7 @@
 
         //Publishing
         var thespot = hostelToGo;
-        var dronekaid = str(droneID);
+        var dronekaid = String(droneID);
         /*var lockey = new ROSLIB.Topic({
             ros: ros,
             name: '/location_input',
@@ -106,8 +106,8 @@
             serviceType : 'offb/Web_Input'  //instead of webinput add .srv file name which will be in offb/src
          });
         var request = new ROSLIB.ServiceRequest({
-            DroneId : dronekaid,
             hostel_to : thespot,
+            //DroneID : "Hostel 5"
         });
         //calling service check res.success
         console.log('service');

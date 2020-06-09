@@ -6,8 +6,9 @@
 //#include "AssignWP.h"
 #include <vector>
 
-std::string hostel = "hos";
-int DroneID;
+std::string hostel ;
+std::string droneID;
+bool successful = true;
 //std::vector<mavros_msgs::Waypoint> listOfWP;
 
 bool getData(offb::Web_Input::Request &req, offb::Web_Input::Response &res);
@@ -18,33 +19,38 @@ int main(int argc, char **argv)
     ros::NodeHandle n;
     ros::NodeHandle p;
 
+    ros::Rate rate(20.0);
+
     ros::ServiceServer service = n.advertiseService("Web_Input", getData);
     ROS_INFO("Ready to get data");    
 
-    std_msgs::String hostelTo;
-    hostelTo.data = hostel;
-
-    ros::Publisher hostel_data_pub = p.advertise<std_msgs::String>("hostel_Data", 100);
-
-    ros::Rate loop_rate(10);
-
-    while(hostel_data_pub.getNumSubscribers() == 0)
-    {
+    while(successful){
         ros::spinOnce();
-        loop_rate.sleep();
+        rate.sleep();
     }
 
-    hostel_data_pub.publish(hostelTo);
-    ros::spin();
+    std_msgs::String hostelTo;
+
+    hostelTo.data = hostel;    
+    
+    ros::Publisher hostel_data_pub = p.advertise<std_msgs::String>("hostel_Data", 100);
+
+    while(hostel_data_pub.getNumSubscribers() == 0){
+        ros::spinOnce();
+        rate.sleep();
+    }
+    while(ros::ok()){
+        hostel_data_pub.publish(hostelTo);
+        ros::spin();
+    }
     return 0;
 }
 
  bool getData(offb::Web_Input::Request &req, offb::Web_Input::Response &res){
         hostel = req.hostel_to;
-        DroneID = req.DroneID;
+        droneID = req.DroneID;
         res.success = true;
+        ROS_INFO("service request succesful");
+        successful = false;
         return true;
-    }
-
-
-
+}
