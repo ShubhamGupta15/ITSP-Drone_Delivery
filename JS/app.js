@@ -115,7 +115,7 @@
             console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
         });
         //reload page
-        //location.href = "index.html";
+        location.href = "index.html";
 
 
     };
