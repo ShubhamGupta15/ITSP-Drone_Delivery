@@ -72,28 +72,43 @@
         //Publishing
         var thespot = hostelToGo;
         var dronekaid = droneID;
-        var lockey = new ROSLIB.Topic({
-            ros: ros,
-            name: '/location_input',
-            messageType: 'std_msgs/String'
-        });
+        //var lockey = new ROSLIB.Topic({
+           // ros: ros,
+           // name: '/location_input',
+          //  messageType: 'std_msgs/String'
+        //});
 
-        var hostel = new ROSLIB.Message({
-             data: thespot,
-        });
-        lockey.publish(hostel);
-        console.log('Destination: ', thespot);
+        //var hostel = new ROSLIB.Message({
+        //     data: thespot,
+        //});
+        //lockey.publish(hostel);
+        //console.log('Destination: ', thespot);
 
-        var drone = new ROSLIB.Topic({
-            ros: ros,
-            name: '/drone_id',
-            messageType: 'std_msgs/String'
+        //var drone = new ROSLIB.Topic({
+         //   ros: ros,
+         //   name: '/drone_id',
+         //   messageType: 'std_msgs/String'
+        //});
+        //var droneneed = new ROSLIB.Message({
+        //    data: dronekaid,
+        //});
+        //lockey.publish(droneneed);
+        //console.log('Destination: ', dronekaid);
+
+        //service def
+        var web_inputClient = new ROSLIB.Service({
+            ros : ros,
+            name : '/web_input',
+            serviceType : 'offb/webinput'  //instead of webinput add .srv file name which will be in offb/src
+         });
+        var request = new ROSLIB.ServiceRequest({
+            loc : thespot,
+            id : dronekaid,
         });
-        var droneneed = new ROSLIB.Message({
-            data: dronekaid,
+        //calling service check result.concatenate
+        web_inputClient.callService(request, function(result) {
+            console.log('Result for service call on '+ web_inputClient.name + ': '+ result.concatenate);
         });
-        lockey.publish(droneneed);
-        console.log('Destination: ', dronekaid);
         //reload page
         //location.href = "index.html";
 
