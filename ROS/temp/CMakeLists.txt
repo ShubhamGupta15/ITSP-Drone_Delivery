@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   message_generation
+  rosbridge_library
 )
 
 ## System dependencies are found with CMake's conventions
@@ -106,7 +107,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES offb
-#  CATKIN_DEPENDS geometry_msgs mavros_msgs roscpp std_msgs
+  CATKIN_DEPENDS geometry_msgs mavros_msgs roscpp std_msgs rosbridge_library
 #  DEPENDS system_lib
 )
 

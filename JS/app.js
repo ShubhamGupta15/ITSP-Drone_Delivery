@@ -73,7 +73,7 @@
 
         //Publishing
         var thespot = hostelToGo;
-        var dronekaid = droneID;
+        var dronekaid = str(droneID);
         /*var lockey = new ROSLIB.Topic({
             ros: ros,
             name: '/location_input',

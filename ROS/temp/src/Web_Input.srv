@@ -1,4 +1,4 @@
-string DroneID
+int64 DroneID
 string hostel_to
 ---
 bool success
