@@ -1,4 +1,3 @@
-
     // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyBh9XgJXNJXkpLgEwcU4d080MqhISukpCs",
@@ -102,12 +101,12 @@
             serviceType : 'offb/webinput'  //instead of webinput add .srv file name which will be in offb/src
          });
         var request = new ROSLIB.ServiceRequest({
-            loc : thespot,
-            id : dronekaid,
+            DroneId : dronekaid,
+            hostel_to : thespot,
         });
-        //calling service check result.concatenate
-        web_inputClient.callService(request, function(result) {
-            console.log('Result for service call on '+ web_inputClient.name + ': '+ result.concatenate);
+        //calling service check res.success
+        web_inputClient.callService(request, function(res) {
+            console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
         });
         //reload page
         //location.href = "index.html";
@@ -142,3 +141,4 @@
 
     //to respond to submisson of trackiing form
     formTrack.addEventListener("submit", onSubmitTrack);
+>>>>>>> d343250edbf0c61bc7f417106f22d8c6ec7031a3
