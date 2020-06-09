@@ -10,13 +10,16 @@
 #include <mavros_msgs/WaypointPush.h>
 #include <mavros_msgs/WaypointClear.h>
 #include <std_msgs/String.h>
-
+#include <Mavros_msgs/Waypoint.h>
+#include "offb/WpList.h"
 
 std::vector <mavros_msgs::Waypoint> listOfWP; 
 
-void waypoint_in(const std_msgs::String::ConstPtr& loc){
-    mavros_msgs::Waypoint wp_msg[5];
-    bool wp_set = true;
+void passData(const offb::WpList list){
+
+    listOfWp = list.wpList;
+    //mavros_msgs::Waypoint wp_msg[5];
+    /*bool wp_set = true;
     std_msgs::String loc_msg;
     loc_msg = *loc;
    
@@ -89,7 +92,7 @@ void waypoint_in(const std_msgs::String::ConstPtr& loc){
                 listOfWP.push_back(wp_msg[i]);
             }
 
-        } 
+        } */
         //ros::spinOnce();
     
     return;
@@ -124,8 +127,8 @@ int main(int argc, char **argv)
             ("/mavros/mission/clear");
     ros::ServiceClient set_home_client = u.serviceClient<mavros_msgs::CommandHome>
             ("mavros/cmd/set_home");
-    ros::Subscriber location_sub = nh.subscribe <std_msgs::String>
-            ("location_input", 100, waypoint_in);
+    ros::Subscriber location_sub = nh.subscribe <offb::WpList>
+            ("Data", 100, passData);
     ros::Publisher location_pub = r.advertise <std_msgs::String>
             ("location_input", 100);
     std_msgs::String ini;
@@ -216,7 +219,7 @@ int main(int argc, char **argv)
                 misson = false;
             }
             last_request = ros::Time::now();
-        } 
+        }
        else {
             if( arm && !current_state.armed &&
                 (ros::Time::now() - last_request > ros::Duration(5.0))){
