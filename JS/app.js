@@ -14,6 +14,22 @@
     firebase.analytics();
 
     let firestore = firebase.firestore();
+    
+    //for rosbridge connection
+    var ros = new ROSLIB.Ros({
+            url : 'ws://localhost:9090'
+        });
+        ros.on('connection', function() {
+            console.log('Connected to websocket server.');
+        });
+
+        ros.on('error', function(error) {
+            console.log('Error connecting to websocket server: ', error);
+        });
+
+        ros.on('close', function() {
+            console.log('Connection to websocket server closed.');
+        });
 
 
     //document refrences to firebase database
@@ -53,46 +69,35 @@
         
         //JS for communicating with ROS
 
-        var ros = new ROSLIB.Ros({
-            url : 'ws://localhost:9090'
-        });
-        ros.on('connection', function() {
-            console.log('Connected to websocket server.');
-        });
-
-        ros.on('error', function(error) {
-            console.log('Error connecting to websocket server: ', error);
-        });
-
-        ros.on('close', function() {
-            console.log('Connection to websocket server closed.');
-        });
+        
 
         //Publishing
         var thespot = hostelToGo;
         var dronekaid = droneID;
-        //var lockey = new ROSLIB.Topic({
-           // ros: ros,
-           // name: '/location_input',
-          //  messageType: 'std_msgs/String'
-        //});
+        /*var lockey = new ROSLIB.Topic({
+            ros: ros,
+            name: '/location_input',
+            messageType: 'std_msgs/String'
+        });
 
-        //var hostel = new ROSLIB.Message({
-        //     data: thespot,
-        //});
-        //lockey.publish(hostel);
-        //console.log('Destination: ', thespot);
+        var hostel = new ROSLIB.Message({
+             data: thespot,
+        });
+        lockey.publish(hostel);
+        console.log('Destination: ', thespot);
 
-        //var drone = new ROSLIB.Topic({
-         //   ros: ros,
-         //   name: '/drone_id',
-         //   messageType: 'std_msgs/String'
-        //});
-        //var droneneed = new ROSLIB.Message({
-        //    data: dronekaid,
-        //});
-        //lockey.publish(droneneed);
-        //console.log('Destination: ', dronekaid);
+        var drone = new ROSLIB.Topic({
+            ros: ros,
+            name: '/drone_id',
+            messageType: 'std_msgs/String'
+        });
+        var droneneed = new ROSLIB.Message({
+            data: dronekaid,
+        });
+        lockey.publish(droneneed);
+        console.log('Destination: ', dronekaid);
+        */
+
 
         //service def
         var web_inputClient = new ROSLIB.Service({
@@ -105,6 +110,7 @@
             hostel_to : thespot,
         });
         //calling service check res.success
+        console.log('service');
         web_inputClient.callService(request, function(res) {
             console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
         });
@@ -141,4 +147,3 @@
 
     //to respond to submisson of trackiing form
     formTrack.addEventListener("submit", onSubmitTrack);
->>>>>>> d343250edbf0c61bc7f417106f22d8c6ec7031a3
