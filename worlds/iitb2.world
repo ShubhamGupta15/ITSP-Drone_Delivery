@@ -4,8 +4,16 @@
 		<include>
 			<uri>model://sun</uri>
 		</include>
+			<scene>
+ 				 <sky>
+   					 <clouds>
+    					  <speed>12</speed>
+  					  </clouds>
+ 				 </sky>
+			<shadows>0</shadows>
+			</scene>		
 		<model name="my_mesh">
-			<pose>-500 650 -30  0 0 0</pose>
+			<pose>-480 650 -25  0 0 0</pose>
 			<static>true</static>
 			<link name="body">
 				<visual name="visual">
@@ -27,4 +35,3 @@
 		</model>
 	</world>
 </sdf>
-
