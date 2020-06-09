@@ -1,0 +1,4 @@
+string DroneID
+string hostel_to
+---
+bool success
