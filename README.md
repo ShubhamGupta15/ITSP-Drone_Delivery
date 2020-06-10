@@ -12,9 +12,10 @@ The working package(with web integration) is offb-working2.
 5. Replace the contents of your offb package with the contents of this offb-working2.
 6. Copy the launch_rosbridge.sh launch-common.sh and launch-offb.sh to your catkin_ws root.
 7. Check and modify permisson of all files to executables.
-8. Run catkin build. (not catkin_make)
-9. Install QGroundControl.
-10. Setup Done!!
+8. From the worlds folder, add iitb2.world to catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and the rest of the files to sitl_gazebo/models.
+9. Run catkin build. (not catkin_make)
+10. Install QGroundControl.
+11. Setup Done!!
 
 
 How to run simulation:
