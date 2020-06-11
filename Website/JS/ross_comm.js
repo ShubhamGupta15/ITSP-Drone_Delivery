@@ -15,7 +15,7 @@ var ros = new ROSLIB.Ros({
         ros.on('close', function() {
             console.log('Connection to websocket server closed.');
         });
-        <!-- Publishing-->
+        //<!-- Publishing-->
         var lockey = new ROSLIB.Topic({
             ros: ros,
             name: '/location_input',
