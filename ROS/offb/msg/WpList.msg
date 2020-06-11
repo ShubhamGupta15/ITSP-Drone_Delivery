@@ -1,1 +1,0 @@
-offb::Waypoint[] wpList

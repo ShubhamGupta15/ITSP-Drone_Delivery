@@ -1,17 +1,17 @@
-#include "sub_Callback.h"
+#include "AssignWP.h"
 
 std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel)
 {
     using namespace std;
 
-    std::string hi;
+    
     std::vector<mavros_msgs::Waypoint> listOfWP;
 
     mavros_msgs::Waypoint wp_msg[5];
     
         if (hostel == "Hostel 5"){
             
-            wp_set = false;
+    
 
             wp_msg[0].frame = 3; 
             wp_msg[0].command = 22;
