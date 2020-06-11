@@ -1,0 +1,2 @@
+string DroneID
+string Hostel

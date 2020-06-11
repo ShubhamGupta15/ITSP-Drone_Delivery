@@ -11,6 +11,7 @@
 #include <mavros_msgs/WaypointClear.h>
 #include <std_msgs/String.h>
 #include "AssignWP.h"
+#include "offb/Data.h"
 
 std::vector <mavros_msgs::Waypoint> listOfWP; 
 
@@ -21,7 +22,7 @@ void state_cb(const mavros_msgs::State::ConstPtr& msg){
     current_state = *msg;
 }
 
-void passData(std_msgs::String hostel);
+void passData(offb::Data hostel_ID);
 
 
 int main(int argc, char **argv)
@@ -46,8 +47,8 @@ int main(int argc, char **argv)
             ("/mavros/mission/clear");
     ros::ServiceClient set_home_client = u.serviceClient<mavros_msgs::CommandHome>
             ("mavros/cmd/set_home");
-    ros::Subscriber location_sub = nh.subscribe <std_msgs::String>
-            ("hostel_Data", 100, passData);
+    ros::Subscriber location_sub = nh.subscribe <offb::Data>
+            ("drone_data", 100, passData);
     
 
     mavros_msgs::WaypointPush PushSrv;
@@ -64,6 +65,7 @@ int main(int argc, char **argv)
         ros::spinOnce();
         rate.sleep();
     }
+
 
     while(success){
         ros::spinOnce();
@@ -88,10 +90,10 @@ int main(int argc, char **argv)
         if(set_home_srv.response.success)
             ROS_INFO("Home was set to new value ");
         else
-           ROS_ERROR("Home position couldn't been changed"); 
+            ROS_ERROR("Home position couldn't been changed"); 
         
     }
-    else    
+    else
         ROS_ERROR("Service could not be called");
     
 
@@ -158,79 +160,10 @@ int main(int argc, char **argv)
 
 
 
-void passData(std_msgs::String hostel){
+void passData(offb::Data hostel_ID){
 
-    //mavros_msgs::Waypoint wp_msg[5];
-    
     success = false;
 
-    /*if (hostel.data == "Hostel 5"){
-        
-        wp_msg[0].frame = 3; 
-        wp_msg[0].command = 22;
-        wp_msg[0].is_current = false;
-        wp_msg[0].autocontinue = true;
-        wp_msg[0].param1 = 15;
-        wp_msg[0].param2 = 0;
-        wp_msg[0].param3 = 0;
-        wp_msg[0].param4 = 0;
-        wp_msg[0].x_lat = 19.12579446;
-        wp_msg[0].y_long = 72.91619611;
-        wp_msg[0].z_alt = 10.0;
 
-        wp_msg[1].frame = 3; 
-        wp_msg[1].command = 16;
-        wp_msg[1].is_current = true;
-        wp_msg[1].autocontinue = true;
-        wp_msg[1].param1 = 15;
-        wp_msg[1].param2 = 0;
-        wp_msg[1].param3 = 0;
-        wp_msg[1].param4 = 0;
-        wp_msg[1].x_lat = 19.12871289;
-        wp_msg[1].y_long = 72.91537415;
-        wp_msg[1].z_alt = 10.0;
-
-        wp_msg[2].frame = 3; 
-        wp_msg[2].command = 16;
-        wp_msg[2].is_current = false;
-        wp_msg[2].autocontinue = true;
-        wp_msg[2].param1 = 15;
-        wp_msg[2].param2 = 0;
-        wp_msg[2].param3 = 0;
-        wp_msg[2].param4 = 0;
-        wp_msg[2].x_lat = 19.131931872621035;
-        wp_msg[2].y_long = 72.915175289366;
-        wp_msg[2].z_alt = 10.0;
-
-        wp_msg[3].frame = 3; 
-        wp_msg[3].command = 21;
-        wp_msg[3].is_current = false;
-        wp_msg[3].autocontinue = true;
-        wp_msg[3].param1 = 15;
-        wp_msg[3].param2 = 0;
-        wp_msg[3].param3 = 0;
-        wp_msg[3].param4 = 0;
-        wp_msg[3].x_lat = 19.13398597233391;
-        wp_msg[3].y_long = 72.91314691725862;
-        wp_msg[3].z_alt = 10.0;
-
-        wp_msg[4].frame = 3; 
-        wp_msg[4].command = 21;
-        wp_msg[4].is_current = false;
-        wp_msg[4].autocontinue = true;
-        wp_msg[4].param1 = 15;
-        wp_msg[4].param2 = 0;
-        wp_msg[4].param3 = 0;
-        wp_msg[4].param4 = 0;
-        wp_msg[4].x_lat = 19.13477503621716;
-        wp_msg[4].y_long = 72.9104689353687;
-        wp_msg[4].z_alt = 10.0;
-    
-        
-        for(int i = 0;i<=4;i++){
-            listOfWP.push_back(wp_msg[i]);
-        }
-    }*/
-
-    listOfWP = waypoint_in(hostel.data);
+    listOfWP = waypoint_in(hostel_ID.Hostel);
 }

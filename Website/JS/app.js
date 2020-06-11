@@ -107,7 +107,7 @@
          });
         var request = new ROSLIB.ServiceRequest({
             hostel_to : thespot,
-            //DroneID : "Hostel 5"
+            DroneID : dronekaid
         });
         //calling service check res.success
         console.log('service');

@@ -3,8 +3,8 @@
 #include "offb/Web_Input.h"
 #include <string>
 #include<std_msgs/String.h>
-//#include "AssignWP.h"
 #include <vector>
+#include"offb/Data.h"
 
 std::string hostel ;
 std::string droneID;
@@ -22,33 +22,31 @@ int main(int argc, char **argv)
     ros::Rate rate(20.0);
 
     ros::ServiceServer service = n.advertiseService("Web_Input", getData);
-    ROS_ERROR("Ready to get data");    
+    ROS_INFO("Ready to get data");    
 
-    std_msgs::String hostelTo;
+    offb::Data hostel_ID;
 
-    ros::Publisher hostel_data_pub = p.advertise<std_msgs::String>("hostel_Data", 100);
+    ros::Publisher hostel_data_pub = p.advertise<offb::Data>("drone_data", 100);
 
     while(hostel_data_pub.getNumSubscribers() == 0){
-         //ros::spinOnce();
-         rate.sleep();
-         ROS_ERROR("WAITING...");
-        }
+        //ros::spinOnce();
+        rate.sleep();
+        ROS_INFO("WAITING...");
+    }
 
 
     while(ros::ok()){
-    /*
-        ros::spinOnce();
-        rate.sleep();*/
     
-    hostelTo.data = hostel;
-    //ROS_ERROR("LOOP IS RUNNING");
+    hostel_ID.DroneID = droneID;
+    hostel_ID.Hostel = hostel;
 
+    
     if(publish_data)
     {
             //while(ros::ok()){
-            hostel_data_pub.publish(hostelTo);
+            hostel_data_pub.publish(hostel_ID);
             //}
-            ROS_ERROR("PUBLISHING DONE");
+            ROS_INFO("PUBLISHING DONE");
             publish_data = false;
     }
 
