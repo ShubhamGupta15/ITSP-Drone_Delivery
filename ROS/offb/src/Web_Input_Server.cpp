@@ -8,7 +8,7 @@
 
 std::string hostel ;
 std::string droneID;
-bool publish_data = false, wait_for_sub = true;
+bool publish_data = false;
 //std::vector<mavros_msgs::Waypoint> listOfWP;
 
 bool getData(offb::Web_Input::Request &req, offb::Web_Input::Response &res);
@@ -28,28 +28,25 @@ int main(int argc, char **argv)
 
     ros::Publisher hostel_data_pub = p.advertise<std_msgs::String>("hostel_Data", 100);
 
-    while(true){
+    while(hostel_data_pub.getNumSubscribers() == 0){
+         //ros::spinOnce();
+         rate.sleep();
+         ROS_ERROR("WAITING...");
+        }
+
+
+    while(ros::ok()){
     /*
         ros::spinOnce();
         rate.sleep();*/
     
-    hostelTo.data = hostel;     
+    hostelTo.data = hostel;
     //ROS_ERROR("LOOP IS RUNNING");
 
-    if(wait_for_sub)
-    {
-        while(hostel_data_pub.getNumSubscribers() == 0){
-            //ros::spinOnce();
-            rate.sleep();
-            ROS_ERROR("WAITING...");
-        }
-        ROS_ERROR("WAITING FOR SUBSCRIBER DONE");
-        wait_for_sub = false;
-    }
     if(publish_data)
     {
             //while(ros::ok()){
-            hostel_data_pub.publish(hostelTo);            
+            hostel_data_pub.publish(hostelTo);
             //}
             ROS_ERROR("PUBLISHING DONE");
             publish_data = false;
