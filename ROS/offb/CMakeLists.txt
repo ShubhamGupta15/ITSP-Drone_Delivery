@@ -134,10 +134,11 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
- add_executable(${PROJECT_NAME}_node src/offb_node.cpp src/AssignWP.cpp src/AssignWP.h)
+ add_executable(deploy_UAV0 src/deploy_UAV0.cpp src/AssignWP.cpp src/AssignWP.h)
+ add_executable(deploy_UAV1 src/deploy_UAV1.cpp src/AssignWP.cpp src/AssignWP.h)
+ add_executable(deploy_UAV2 src/deploy_UAV2.cpp src/AssignWP.cpp src/AssignWP.h)
  add_executable(Web_Input_Server src/Web_Input_Server.cpp)
- #add_executable(AssignWP src/AssignWP.cpp)
-
+ 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -149,7 +150,13 @@ include_directories(
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(${PROJECT_NAME}_node
+ target_link_libraries(deploy_UAV0
+   ${catkin_LIBRARIES}
+ )
+ target_link_libraries(deploy_UAV1
+   ${catkin_LIBRARIES}
+ )
+ target_link_libraries(deploy_UAV2
    ${catkin_LIBRARIES}
  )
  target_link_libraries(Web_Input_Server

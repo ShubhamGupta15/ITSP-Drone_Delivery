@@ -17,7 +17,9 @@ int main(int argc, char **argv)
 {
     ros::init(argc,argv,"Web_Input_Server");
     ros::NodeHandle n;
-    ros::NodeHandle p;
+    ros::NodeHandle p1;
+    ros::NodeHandle p2;
+    ros::NodeHandle p3;
 
     ros::Rate rate(20.0);
 
@@ -26,9 +28,11 @@ int main(int argc, char **argv)
 
     offb::Data hostel_ID;
 
-    ros::Publisher hostel_data_pub = p.advertise<offb::Data>("drone_data", 100);
+    ros::Publisher hostel_data_pub0 = p1.advertise<offb::Data>("UAV0_Data", 100);
+    ros::Publisher hostel_data_pub1 = p2.advertise<offb::Data>("UAV1_Data", 100);
+    ros::Publisher hostel_data_pub2 = p3.advertise<offb::Data>("UAV2_Data", 100);
 
-    while(hostel_data_pub.getNumSubscribers() == 0){
+    while(hostel_data_pub1.getNumSubscribers() == 0 && hostel_data_pub2.getNumSubscribers() == 0 && hostel_data_pub0.getNumSubscribers() == 0){
         //ros::spinOnce();
         rate.sleep();
         ROS_INFO("WAITING...");
@@ -43,11 +47,22 @@ int main(int argc, char **argv)
     
     if(publish_data)
     {
-            //while(ros::ok()){
-            hostel_data_pub.publish(hostel_ID);
-            //}
-            ROS_INFO("PUBLISHING DONE");
-            publish_data = false;
+        if(droneID == "1")
+        {            
+            hostel_data_pub0.publish(hostel_ID);
+            ROS_INFO("PUBLISHED TO UAV-0");            
+        }
+        else if(droneID == "2")
+        {
+            hostel_data_pub1.publish(hostel_ID);
+            ROS_INFO("PUBLISHED TO UAV-1");            
+        }
+        else if(droneID == "3")
+        {
+            hostel_data_pub2.publish(hostel_ID);
+            ROS_INFO("PUBLISHED TO UAV-2");            
+        }
+        publish_data = false;
     }
 
     ros::spinOnce();

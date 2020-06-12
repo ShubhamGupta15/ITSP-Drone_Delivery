@@ -27,28 +27,28 @@ void passData(offb::Data hostel_ID);
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "offb_node");
+    ros::init(argc, argv, "deploy_UAV1");
     ros::NodeHandle nh;
     ros::NodeHandle p;
     ros::NodeHandle u;
     ros::NodeHandle r;
 
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
-            ("mavros/state", 10, state_cb);
+            ("/uav1/mavros/state", 10, state_cb);
     ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
-            ("mavros/setpoint_position/local", 10);
+            ("uav1/mavros/setpoint_position/local", 10);
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>
-            ("mavros/cmd/arming");
+            ("/uav1/mavros/cmd/arming");
     ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>
-            ("mavros/set_mode");
+            ("/uav1/mavros/set_mode");
     ros::ServiceClient clientPush = p.serviceClient<mavros_msgs::WaypointPush>
-            ("/mavros/mission/push");
+            ("/uav1/mavros/mission/push");
 	ros::ServiceClient clientClear = u.serviceClient<mavros_msgs::WaypointClear>
-            ("/mavros/mission/clear");
+            ("/uav1/mavros/mission/clear");
     ros::ServiceClient set_home_client = u.serviceClient<mavros_msgs::CommandHome>
-            ("mavros/cmd/set_home");
+            ("/uav1/mavros/cmd/set_home");
     ros::Subscriber location_sub = nh.subscribe <offb::Data>
-            ("drone_data", 100, passData);
+            ("UAV1_Data", 100, passData);
     
 
     mavros_msgs::WaypointPush PushSrv;
