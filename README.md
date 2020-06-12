@@ -12,7 +12,7 @@ The working package(with web integration) is offb-working2.
 5. Replace the contents of your offb package with the contents of this offb-working2.
 6. Copy the launch_rosbridge.sh launch-common.sh and launch-offb.sh to your catkin_ws root.
 7. Check and modify permisson of all files to executables.
-8. From the worlds folder, add iitb2.world to catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and the rest of the files to sitl_gazebo/models.
+8. From the worlds folder, add iitb2.world to catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and the rest of the files to      sitl_gazebo/models.
 9. Run catkin build. (not catkin_make)
 10. Install QGroundControl.
 11. Setup Done!!
@@ -24,7 +24,7 @@ How to run simulation:
 2. In a new terminal launch the ROS setup using launch-offb.sh
 3. Run QGroundControl.
 4. Open the website in the websie folder of the repo.
-5. Enter the commands to the delivry form.
-6. the simulation and the QGroundControl will recieve commands and the misson will run**.
+5. Enter the commands to the delivery form.
+6. The simulation and the QGroundControl will recieve commands and the misson will run**.
 
 **Currently misson only supported for hostel 5 rest will be added soon.
