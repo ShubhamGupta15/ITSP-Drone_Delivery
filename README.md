@@ -13,7 +13,7 @@ The working package(with web integration) is offb-working2.
 6. Copy the launch_rosbridge.sh launch-common.sh and launch-offb.sh to your catkin_ws root.
 7. Check and modify permisson of all files to executables.
 8. From the worlds folder, add all the contents to both catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and sitl_gazebo/models.
-9. In catkin_ws/src/Firmware/launch/mavros_posix_sitl.launch in line 15 change the world file at the end of the line to iitb2.world from emmpty.world
+9. In catkin_ws/src/Firmware/launch/mavros_posix_sitl.launch in line 15 change the world file at the end of the line to iitb2.world from empty.world
 10. Run catkin build. (not catkin_make)
 11. Install QGroundControl.
 12. Setup Done!!
