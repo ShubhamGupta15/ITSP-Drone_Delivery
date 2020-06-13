@@ -69,17 +69,17 @@ int main(int argc, char **argv)
     
     if(publish_data)
     {
-        if(delivered_DroneID == "1")
+        if(droneID == "1")
         {            
             hostel_data_pub0.publish(hostel_ID);
             ROS_INFO("PUBLISHED TO UAV-0");            
         }
-        else if(delivered_DroneID == "2")
+        else if(droneID == "2")
         {
             hostel_data_pub1.publish(hostel_ID);
             ROS_INFO("PUBLISHED TO UAV-1");            
         }
-        else if(delivered_DroneID == "3")
+        else if(droneID == "3")
         {
             hostel_data_pub2.publish(hostel_ID);
             ROS_INFO("PUBLISHED TO UAV-2");            
