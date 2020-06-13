@@ -56,7 +56,6 @@ int main(int argc, char **argv)
             ("UAV0_Data", 100, passData);
     ros::Subscriber del = nh.subscribe <std_msgs::Bool>
             ("delivered0", 100, getStatus);
-
     ros::ServiceClient droneReturn = c.serviceClient<mavros_msgs::WaypointSetCurrent>
         ("/uav0/mavros/mission/set_current");    
 
