@@ -1,0 +1,4 @@
+string DroneID
+bool delivered
+---
+bool status
