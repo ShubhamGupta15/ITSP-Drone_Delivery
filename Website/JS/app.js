@@ -14,7 +14,7 @@
     firebase.analytics();
 
     let firestore = firebase.firestore();
-    
+
     //for rosbridge connection
     var ros = new ROSLIB.Ros({
             url : 'ws://localhost:9090'
@@ -66,10 +66,10 @@
             trackingID: droneID
         });
 
-        
+
         //JS for communicating with ROS
 
-        
+
 
         //Publishing
         var thespot = hostelToGo;
@@ -136,7 +136,9 @@
                 console.log(err);
         });
 
-        //location.href = "HTML/testloc.html";
+        //appending trackID param to the URL
+        var queryString = "?" + droneIDTrack;
+        location.href = "HTML/testloc.html" + queryString;
 
     };
 
