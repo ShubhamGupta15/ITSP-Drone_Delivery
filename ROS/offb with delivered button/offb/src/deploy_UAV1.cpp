@@ -66,6 +66,30 @@ int main(int argc, char **argv)
         rate.sleep();
     }
 
+    //clearing
+    if(clientClear.call(ClearSrv))
+	{
+		if(ClearSrv.response.success)	
+			ROS_INFO("WAYPOINTS CLEARED");
+		else
+			ROS_ERROR("ERROR IN CLEARING WAYPOINTS");
+	}
+	else
+		ROS_ERROR("------------------------------ERROR IN CALLING CLEAR SERVICE------------------------------");
+
+
+    //setting home
+    if (set_home_client.call(set_home_srv)){
+        if(set_home_srv.response.success)
+            ROS_INFO("Home was set to new value ");
+        else
+            ROS_ERROR("Home position couldn't been changed"); 
+        
+    }
+    else
+        ROS_ERROR("Service could not be called");
+
+
 
     while(success){
         ros::spinOnce();
@@ -83,32 +107,6 @@ int main(int argc, char **argv)
 
     PushSrv.request.start_index = 0;
 	PushSrv.request.waypoints = listOfWP;
-
-
-    if (set_home_client.call(set_home_srv))
-    {
-        if(set_home_srv.response.success)
-            ROS_INFO("Home was set to new value ");
-        else
-            ROS_ERROR("Home position couldn't been changed"); 
-        
-    }
-    else
-        ROS_ERROR("Service could not be called");
-    
-
-    
-    if(clientClear.call(ClearSrv))
-	{
-		if(ClearSrv.response.success)	
-			ROS_INFO("WAYPOINTS CLEARED");
-		else
-			ROS_ERROR("ERROR IN CLEARING WAYPOINTS");
-	}
-	else
-		ROS_ERROR("------------------------------ERROR IN CALLING CLEAR SERVICE------------------------------");
-
-     
  
     if(clientPush.call(PushSrv))
 	{
@@ -163,7 +161,6 @@ int main(int argc, char **argv)
 void passData(offb::Data hostel_ID){
 
     success = false;
-
 
     listOfWP = waypoint_in(hostel_ID.Hostel);
 }

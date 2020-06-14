@@ -191,14 +191,14 @@
                     0,
                     0,
                     null,
-                    19.136009560412223,
-                    72.91269050021256,
+                    19.13604995710229,
+                    72.91248382951969,
                     30
                 ],
                 "type": "SimpleItem"
             },
             {
-                "AMSLAltAboveTerrain": null,
+                "AMSLAltAboveTerrain": 30,
                 "Altitude": 30,
                 "AltitudeMode": 1,
                 "autoContinue": true,

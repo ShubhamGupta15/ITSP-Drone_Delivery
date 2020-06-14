@@ -59,7 +59,6 @@ find_package(catkin REQUIRED COMPONENTS
  add_service_files(
    FILES
    Web_Input.srv
-   Delivery.srv
  )
 
 ## Generate actions in the 'action' folder

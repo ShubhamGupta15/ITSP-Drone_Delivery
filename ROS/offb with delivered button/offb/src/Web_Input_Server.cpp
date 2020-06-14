@@ -54,11 +54,11 @@ int main(int argc, char **argv)
         ROS_INFO("WAITING...");
     }
 
-    while(pub_delivery0.getNumSubscribers() == 0 && pub_delivery1.getNumSubscribers() == 0 && pub_delivery2.getNumSubscribers() == 0){    
+/*    while(pub_delivery0.getNumSubscribers() == 0 && pub_delivery1.getNumSubscribers() == 0 && pub_delivery2.getNumSubscribers() == 0){    
         rate.sleep();
         ROS_INFO("WAITING...");
     }
-
+*/
 
 
     while(ros::ok()){
@@ -91,17 +91,17 @@ int main(int argc, char **argv)
     {
         if(delivered_DroneID == "1")
         {            
-            hostel_data_pub0.publish(delivered);
+            pub_delivery0.publish(delivered);
             ROS_INFO("UAV-0 has delivered");            
         }
         else if(delivered_DroneID == "2")
         {
-            hostel_data_pub1.publish(delivered);
+            pub_delivery1.publish(delivered);
             ROS_INFO("UAV-1 has delivered");            
         }
         else if(delivered_DroneID == "3")
         {
-            hostel_data_pub2.publish(delivered);
+            pub_delivery2.publish(delivered);
             ROS_INFO("UAV-2 has delivered");            
         }
         publish_data = false;
