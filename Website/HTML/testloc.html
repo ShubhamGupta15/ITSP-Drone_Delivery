@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<title>DroneTracker</title>
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyAbNpRqO1cmeh-XOltSeDszmm50YLhKD4U"></script>
-<script src="../JS/tracking.js"></script>
+    <title>Crusaders Tracking</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+	<script type='text/javascript' src="../JS/tracking.js"></script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
 </head>
-<body onload = showPosition()>
-    <div id="embedMap" style="width: 400px; height: 300px;">
-        <!--Google map will be embedded here-->
-    </div>
+<body onload="setTimeout(putPin(), 5000)">
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div><br/>
+    <!--<input type="button" value="Start Continuous Tracking" onclick="StartTracking()"/>-->
+    <input type="button" value="Stop Continuous Tracking" onclick="StopTracking()"/>
+    <!--<input type="button" value="Put Pin" onclick="putPin()"/>-->
+    <input type="button" value="Push" onclick="startPush()"/>
 </body>
 </html>
