@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
     <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-	<script type='text/javascript' src="../JS/tracking.js"></script>
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
 </head>
 <body onload="setTimeout(putPin(), 5000)">
@@ -14,5 +13,9 @@
     <input type="button" value="Stop Continuous Tracking" onclick="StopTracking()"/>
     <!--<input type="button" value="Put Pin" onclick="putPin()"/>-->
     <input type="button" value="Push" onclick="startPush()"/>
+    <form id ="Delivered">
+       <input type = "submit" value="Delivered">
+    </form>
+    <script type='text/javascript' src="../JS/tracking.js"></script>
 </body>
 </html>
