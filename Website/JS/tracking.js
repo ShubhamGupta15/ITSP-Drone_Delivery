@@ -116,4 +116,4 @@ var onDelivery = function(){
     });
 }
 
-deliver.addEventListener("click",  onDelivery)
+deliver.addEventListener("submit",  onDelivery)
