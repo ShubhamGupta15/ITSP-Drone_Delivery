@@ -6,4 +6,5 @@
     <node name="deploy_UAV0" pkg="offb" type="deploy_UAV0" output="screen"/>
     <node name="deploy_UAV1" pkg="offb" type="deploy_UAV1" output="screen"/>
     <node name="deploy_UAV2" pkg="offb" type="deploy_UAV2" output="screen"/>
+    <node name="return" pkg="offb" type="return" output="screen"/>
 </launch>

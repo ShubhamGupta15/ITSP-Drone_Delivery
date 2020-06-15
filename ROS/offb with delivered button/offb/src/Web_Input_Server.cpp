@@ -104,7 +104,7 @@ int main(int argc, char **argv)
             pub_delivery2.publish(delivered);
             ROS_INFO("UAV-2 has delivered");            
         }
-        publish_data = false;
+        pub_delivery = false;
     }
 
     ros::spinOnce();
