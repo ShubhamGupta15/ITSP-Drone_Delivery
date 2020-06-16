@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body_content %}
+<p1 classs = "text">
+    {% if invalid %}
+        PLEASE ENTER A VALID TRACK ID
+    {% else %}
+        Your Delivery has already been completed! If you wish to place another one, please fill the form on our main page.
+    {% endif %}
+</p1>
+{% endblock %}

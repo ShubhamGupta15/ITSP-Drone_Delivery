@@ -1,0 +1,12 @@
+How to start the server:
+
+First install django 3.0 - 
+1. Either by direct installing it:
+	open a terminal and run the command 'pip install Django==3.0'
+2. Or by using virtual environment:
+	1.Open a terminal and run pip3 install pipenv
+	2.Navigate to the 'Drone Backend' folder
+	3.run 'pipenv shell'
+
+
+Next, just run 'python manage.py runserver' and type '.../home/' in the address bar, where ... is the server number.

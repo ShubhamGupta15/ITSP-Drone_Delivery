@@ -1,0 +1,10 @@
+body {
+    background: url("/static/Resources/bkg2.jpg");
+    background-size: cover;
+}
+
+.text {
+    font-family: sans-serif;
+    font-size: 19px;
+    color: rgb(245, 245, 245);
+}
