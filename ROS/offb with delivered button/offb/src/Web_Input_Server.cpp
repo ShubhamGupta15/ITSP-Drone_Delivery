@@ -127,7 +127,7 @@ bool getDeliveryStatus(offb::Delivery::Request &req, offb::Delivery::Response &r
     delivered.data = req.delivered;
     delivered_DroneID = req.DroneID;
     ROS_INFO("Received delivery status");
-    res.status = true;
+    res.success = true;
     pub_delivery = true;
 
     return true;
