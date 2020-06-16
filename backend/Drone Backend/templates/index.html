@@ -1,0 +1,82 @@
+﻿{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href= "{% static 'CSS/MainPage_Style.css' %}">
+    <meta charset="UTF-8">
+    <title> Drone Delivery Crusaders</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use  https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+    <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+</head>
+
+
+<body>
+
+
+    <header>
+        <h1 class="main-heading"><span id = "C">C</span>rusaders</h1>
+        
+        <nav><a href="HTML/AboutUs.html" id="about-us-page">About Us</a></nav>
+    </header>
+
+
+
+    <section>
+        <form method = "POST" action = "http://127.0.0.1:8000/home/" id="locationForm"> {% csrf_token %}
+            <div id="grid-container">
+                <div class="grid-item" style="grid-row: 1/3;"><h3>Enter the ID of the drone with the delivery</h3></div>
+                <div class="grid-item" style="grid-row: 3/4;"><label for="drone-id"> Drone ID :</label></div>
+                <div class="grid-item" style="grid-row: 4/6;"><input id="drone-id" type="text" required name = "dronekaid" placeholder="Enter the ID of drone"><br></div>
+
+
+
+                <div class="grid-item" style="grid-row: 6/7;"><label for="hostel-to">Choose the hostel for delivey:</label></div><br>
+                <div class="grid-item" style="grid-row: 7/9;"><input id="hostel-to" list="destination" name = "hostelno" placeholder="Choose the hostel" required></div>
+                <datalist id="destination">
+                    <option value="Hostel 1"></option>
+                    <option value="Hostel 2"></option>
+                    <option value="Hostel 3"></option>
+                    <option value="Hostel 4"></option>
+                    <option value="Hostel 5"></option>
+                    <option value="Hostel 6"></option>
+                    <option value="Hostel 7"></option>
+                    <option value="Hostel 8"></option>
+                    <option value="Hostel 9"></option>
+                    <option value="Hostel 10"></option>
+                    <option value="Hostel 11"></option>
+                    <option value="Hostel 12"></option>
+                    <option value="Hostel 13"></option>
+                    <option value="Hostel 14"></option>
+                    <option value="Hostel 15"></option>
+                    <option value="Hostel 16"></option>
+                    <option value="Hostel 17"></option>
+                    <option value="Hostel 18"></option>
+                    <option value="Tansa House"></option>
+                </datalist><br>
+
+                <div class="grid-item" style="grid-row:9/10;"><input type="submit" value = "Submit" name = "order_form" id="SubmitDelivery"></div>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <form id="trackForm" action = "{% url 'MainPage' %}" method = "POST"> {% csrf_token %}
+            <div id="grid-trackform">
+            <div class="trackform-item" style="grid-row:1/3;"><h3>Enter the ID of Drone to track</h3></div>
+            <div class="trackform-item" style="grid-row:3/4;"><label for="drone-track">Drone ID :</label></div><br>
+            <div class="trackform-item" style="grid-row:4/9"><input id="drone-track" type="text" required placeholder="Drone Track ID" name = "deliveryID"></div><br>
+            <div class="trackform-item" style="grid-row:9/10"><input id="submitTrack" type="submit" name = "track_form" value = "Submit"></div>
+            </div>
+        </form>
+    </section>
+
+
+    <script src=""></script>
+    </body>
+</html>

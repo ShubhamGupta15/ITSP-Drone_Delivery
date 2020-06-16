@@ -172,8 +172,27 @@
                     0,
                     0,
                     null,
-                    19.133923328668466,
-                    72.91100324561242,
+                    19.135740622257973,
+                    72.91466851533599,
+                    30
+                ],
+                "type": "SimpleItem"
+            },
+            {
+                "AMSLAltAboveTerrain": 30,
+                "Altitude": 30,
+                "AltitudeMode": 1,
+                "autoContinue": true,
+                "command": 16,
+                "doJumpId": 10,
+                "frame": 3,
+                "params": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    19.13585887262463,
+                    72.91385199761456,
                     30
                 ],
                 "type": "SimpleItem"

@@ -96,8 +96,8 @@
                     0,
                     0,
                     null,
-                    19.130894762909364,
-                    72.9153875779665,
+                    19.129551702895714,
+                    72.91542773516198,
                     30
                 ],
                 "type": "SimpleItem"
@@ -115,65 +115,8 @@
                     0,
                     0,
                     null,
-                    19.131826153051637,
-                    72.91517249655345,
-                    30
-                ],
-                "type": "SimpleItem"
-            },
-            {
-                "AMSLAltAboveTerrain": 30,
-                "Altitude": 30,
-                "AltitudeMode": 1,
-                "autoContinue": true,
-                "command": 16,
-                "doJumpId": 7,
-                "frame": 3,
-                "params": [
-                    0,
-                    0,
-                    0,
-                    null,
-                    19.13251566,
-                    72.91478359,
-                    30
-                ],
-                "type": "SimpleItem"
-            },
-            {
-                "AMSLAltAboveTerrain": 30,
-                "Altitude": 30,
-                "AltitudeMode": 1,
-                "autoContinue": true,
-                "command": 16,
-                "doJumpId": 8,
-                "frame": 3,
-                "params": [
-                    0,
-                    0,
-                    0,
-                    null,
-                    19.1330327753317,
-                    72.91374519912415,
-                    30
-                ],
-                "type": "SimpleItem"
-            },
-            {
-                "AMSLAltAboveTerrain": 30,
-                "Altitude": 30,
-                "AltitudeMode": 1,
-                "autoContinue": true,
-                "command": 16,
-                "doJumpId": 9,
-                "frame": 3,
-                "params": [
-                    0,
-                    0,
-                    0,
-                    null,
-                    19.133923328668466,
-                    72.91100324561242,
+                    19.12957540217411,
+                    72.91578288571688,
                     30
                 ],
                 "type": "SimpleItem"
