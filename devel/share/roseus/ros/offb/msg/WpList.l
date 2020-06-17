@@ -1,1 +1,0 @@
-/home/shubham/catkin_ws/devel/.private/offb/share/roseus/ros/offb/msg/WpList.l
