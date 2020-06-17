@@ -46,7 +46,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.9139665;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -60,7 +60,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -105,7 +105,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.9124832;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -119,7 +119,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -164,7 +164,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.9114177;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -178,7 +178,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -223,7 +223,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.91051350;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -237,7 +237,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -282,7 +282,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.91018120;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -296,7 +296,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -341,7 +341,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.90714230;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -355,7 +355,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -400,7 +400,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.91124270;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -414,7 +414,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -459,7 +459,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.91125210;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -473,7 +473,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -518,7 +518,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.90833920;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -532,7 +532,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -577,7 +577,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.91571260;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -591,7 +591,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -636,7 +636,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.91209700;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -650,7 +650,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -695,7 +695,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.90555510;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -709,7 +709,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -754,7 +754,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.91468400;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -768,7 +768,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
@@ -813,7 +813,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].y_long = 72.90959850;
             wp_msg[2].z_alt = 21.0;
 
-            if(flag=1){
+            if(flag==1){
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
@@ -827,7 +827,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                     }
 
             }
-            else if(flag=2){
+            else if(flag==2){
                 for(int i = 0;i<=2;i++){
                     listOfWP.push_back(wp_msg[i]);
                 }
