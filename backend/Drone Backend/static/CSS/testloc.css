@@ -1,0 +1,42 @@
+#myMap{
+    position: relative;
+    height: 600px;
+    width: 800px;
+    float: left;
+    margin-left: 10%;
+    margin-top: 30%;    
+}
+
+#stop-track-button{
+    background: none;
+    border: 3px solid rgb(245, 245, 245);
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#stop-track-button:hover{
+    border: 3px solid rgb(195, 195, 195);
+    color: rgb(195, 195, 195);
+}
+
+#push-button{
+    background: none;
+    border: 3px solid rgb(245, 245, 245);
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#push-button:hover{
+    border: 3px solid rgb(195, 195, 195);
+    color: rgb(195, 195, 195);    
+}
+
+#Delivered{
+    
+}
