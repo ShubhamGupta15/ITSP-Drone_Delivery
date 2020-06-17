@@ -1,0 +1,15 @@
+(cl:defpackage offb-srv
+  (:use )
+  (:export
+   "DELIVERY"
+   "<DELIVERY-REQUEST>"
+   "DELIVERY-REQUEST"
+   "<DELIVERY-RESPONSE>"
+   "DELIVERY-RESPONSE"
+   "WEB_INPUT"
+   "<WEB_INPUT-REQUEST>"
+   "WEB_INPUT-REQUEST"
+   "<WEB_INPUT-RESPONSE>"
+   "WEB_INPUT-RESPONSE"
+  ))
+

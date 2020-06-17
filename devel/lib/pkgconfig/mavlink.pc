@@ -1,0 +1,8 @@
+prefix=/home/shubham/catkin_ws/devel
+exec_prefix=/home/shubham/catkin_ws/devel
+includedir=${prefix}/include
+
+Name: mavlink
+Description: MAVLink micro air vehicle marshalling / communication library
+Version: 2020.5.21
+Cflags: -I${includedir}

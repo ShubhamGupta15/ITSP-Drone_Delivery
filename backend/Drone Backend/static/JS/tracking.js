@@ -1,5 +1,5 @@
 var ros = new ROSLIB.Ros({
-        url : 'ws://localhost:9090'
+        url : 'ws://127.0.0.1:8000'
     });
     ros.on('connection', function() {
         console.log('Connected to websocket server.');
