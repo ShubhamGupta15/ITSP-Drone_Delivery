@@ -15,16 +15,33 @@ var ros = new ROSLIB.Ros({
 
     //fetching droneID
     const delID = document.getElementById("delID");
-    var trackID = delID.innerText;
+    var ID = delID.innerText;
+    let droneID = ID.slice(-1);
 
     var lat, long;
 
     //subscription
-    var getloc = new ROSLIB.Topic({
-      ros : ros,
-      name : '/mavros/global_position/global',
-      messageType : 'sensor_msgs/NavSatFix'
-    });
+    if (droneID == '1'){
+      var getloc = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav0/mavros/global_position/global',
+        messageType : 'sensor_msgs/NavSatFix'
+      });
+    }
+    else if (droneID == '2'){
+      var getloc = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav1/mavros/global_position/global',
+        messageType : 'sensor_msgs/NavSatFix'
+      });
+    }
+    else if (droneID == '3'){
+      var getloc = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav2/mavros/global_position/global',
+        messageType : 'sensor_msgs/NavSatFix'
+      });
+    }
 
     getloc.subscribe(function(message) {
       lat = message.latitude;

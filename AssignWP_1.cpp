@@ -1,9 +1,8 @@
 #include "AssignWP_1.h"
 
-std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel)
+std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
 {
     using namespace std;
-
 
     std::vector<mavros_msgs::Waypoint> listOfWP;
 
