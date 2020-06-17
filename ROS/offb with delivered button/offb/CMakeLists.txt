@@ -135,9 +135,9 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
- add_executable(deploy_UAV0 src/deploy_UAV0.cpp src/AssignWP.cpp src/AssignWP.h)
- add_executable(deploy_UAV1 src/deploy_UAV1.cpp src/AssignWP.cpp src/AssignWP.h)
- add_executable(deploy_UAV2 src/deploy_UAV2.cpp src/AssignWP.cpp src/AssignWP.h)
+ add_executable(deploy_UAV0 src/deploy_UAV0.cpp src/AssignWP_0.cpp src/AssignWP_0.h)
+ add_executable(deploy_UAV1 src/deploy_UAV1.cpp src/AssignWP_1.cpp src/AssignWP_1.h)
+ add_executable(deploy_UAV2 src/deploy_UAV2.cpp src/AssignWP_2.cpp src/AssignWP_2.h)
  add_executable(Web_Input_Server src/Web_Input_Server.cpp)
  add_executable(return src/return.cpp)
  

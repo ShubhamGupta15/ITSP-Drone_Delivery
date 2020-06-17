@@ -4,6 +4,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
 {
     using namespace std;
 
+
     std::vector<mavros_msgs::Waypoint> listOfWP;
 
     if (hostel == "Hostel 1"){
@@ -62,6 +63,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 2"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -119,6 +121,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 3"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -176,6 +179,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 4"||hostel="Tansa House"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -233,6 +237,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 5"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -290,6 +295,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 6"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -347,6 +353,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 7"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -404,6 +411,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 8"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -461,6 +469,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 9"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -518,6 +527,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 10"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -575,6 +585,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 11"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -632,6 +643,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 12"||hostel="Hostel 13"||hostel="Hostel 14"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -689,6 +701,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 15"||hostel="Hostel 16"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -746,6 +759,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     elseif(hostel="Hostel 18"){
         mavros_msgs::Waypoint *wp_msg=new mavros_msgs::Waypoint wp_msg[3];
@@ -803,6 +817,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag)
                     listOfWP.push_back(wp_msg[i]);
                 }
             }
+            delete wp_msg;
     }
     return listOfWP;
 }
