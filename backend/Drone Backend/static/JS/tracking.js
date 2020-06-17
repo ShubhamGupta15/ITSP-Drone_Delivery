@@ -13,10 +13,9 @@ var ros = new ROSLIB.Ros({
         console.log('Connection to websocket server closed.');
     });
 
-    //fetching droneID to track from URL param
-    var queryString = decodeURIComponent(window.location.search);
-    queryString = queryString.substring(1);
-    var trackID = queryString.split("&");
+    //fetching droneID
+    const delID = document.getElementById("delID");
+    var trackID = delID.innerText;
 
     var lat, long;
 

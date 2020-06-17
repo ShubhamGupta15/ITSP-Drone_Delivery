@@ -4,6 +4,13 @@
 
 {% block head_content %}
 <link rel="stylesheet" type="text/css" href= "{% static 'CSS/midpage.css' %}">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use  https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+<script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
 {% endblock head_content %}
 
 {% block body_content %}
@@ -24,7 +31,7 @@
 
     {% else %}
 
-        Your delivery has been recorded. Your Delivery ID is {{ id }}
+        Your delivery has been recorded. Your Delivery ID is <span id= "deliveryID">{{ id }}</span>
         It will soon arrive at <span id = "hostelNo">{{ hostel }}</span>
 
     If you want to track your delivery, click the 'Track Delivery' link.<br><br>
@@ -32,9 +39,6 @@
     <a href = "{% url 'TrackPage' id=id %}" id = "track-link"> Track Delivery </a>
     {% endif %}
 </p>
+<script type= 'text/javascript' src = "{% static 'JS/app.js' %}"></script>
 
 {% endblock body_content %}
-
-{% block script_content %}
-
-{% endblock script_content %}

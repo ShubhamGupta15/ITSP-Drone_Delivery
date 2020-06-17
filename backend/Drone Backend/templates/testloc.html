@@ -21,7 +21,7 @@
     <input type="button" class = "text" id = "push-button" value="Push" onclick="startPush()"/>
 
 <br>
-<p class = "text">ENTERED DELIVERY ID: {{ id }}</p>
+<p class = "text">ENTERED DELIVERY ID: <span id = "delID">{{ id }}</span></p>
 
 <form id ="Delivered" method = "POST" action="{% url 'TrackPage' id=id %}"> {% csrf_token %}
     <input type = "submit" value="Delivered" name = "Delivered">
