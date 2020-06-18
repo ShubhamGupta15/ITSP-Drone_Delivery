@@ -55,7 +55,7 @@ int main(int argc, char **argv)
     ros::ServiceClient set_home_client = u.serviceClient<mavros_msgs::CommandHome>
             ("/uav1/mavros/cmd/set_home");
     ros::Subscriber loc_sub= p.subscribe<sensor_msgs::NavSatFix>
-            ("/uav1/global_position/global", 20, getLoc);
+            ("/uav1/mavros/global_position/global", 20, getLoc);
     ros::Subscriber location_sub = nh.subscribe <offb::Data>
             ("UAV1_Data", 100, passData);
     ros::Subscriber del = nh.subscribe <std_msgs::Bool>
@@ -65,11 +65,6 @@ int main(int argc, char **argv)
     mavros_msgs::WaypointPush PushSrv;
 	mavros_msgs::WaypointClear ClearSrv;
     mavros_msgs::CommandHome set_home_srv;
-
-    set_home_srv.request.current_gps = false;
-    set_home_srv.request.latitude = 19.1256161;
-    set_home_srv.request.longitude = 72.9162906;
-    set_home_srv.request.altitude = 0;
 
     mavros_msgs::SetMode offb_set_mode;
     offb_set_mode.request.custom_mode = "AUTO.MISSION";
@@ -115,6 +110,12 @@ int main(int argc, char **argv)
                 }
 
             ros::Time last_request = ros::Time::now();
+
+            set_home_srv.request.current_gps = false;
+            set_home_srv.request.latitude = latitude;
+            set_home_srv.request.longitude = longitude;
+            set_home_srv.request.altitude = 0;
+
 
             PushSrv.request.start_index = 0;
             PushSrv.request.waypoints = listOfWP;
