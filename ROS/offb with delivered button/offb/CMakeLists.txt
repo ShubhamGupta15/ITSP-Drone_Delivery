@@ -139,7 +139,6 @@ include_directories(
  add_executable(deploy_UAV1 src/deploy_UAV1.cpp src/AssignWP_1.cpp src/AssignWP_1.h)
  add_executable(deploy_UAV2 src/deploy_UAV2.cpp src/AssignWP_2.cpp src/AssignWP_2.h)
  add_executable(Web_Input_Server src/Web_Input_Server.cpp)
- add_executable(return src/return.cpp)
  
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -164,9 +163,7 @@ include_directories(
  target_link_libraries(Web_Input_Server
    ${catkin_LIBRARIES}
  )
- target_link_libraries(return
-   ${catkin_LIBRARIES}
- )
+
 
 #############
 ## Install ##

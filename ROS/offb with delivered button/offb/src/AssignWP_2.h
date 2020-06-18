@@ -4,6 +4,6 @@
 #include <string>
 #include <mavros_msgs/Waypoint.h>
 
-std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel, int flag);
+std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag);
 
 #endif
