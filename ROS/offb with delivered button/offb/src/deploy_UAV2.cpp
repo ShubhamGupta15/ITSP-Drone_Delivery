@@ -55,7 +55,7 @@ int main(int argc, char **argv)
     ros::ServiceClient set_home_client = u.serviceClient<mavros_msgs::CommandHome>
             ("/uav2/mavros/cmd/set_home");
     ros::Subscriber loc_sub = p.subscribe<sensor_msgs::NavSatFix>
-            ("uav2/global_position/global", 20, getLoc);
+            ("uav2/mavros/global_position/global", 20, getLoc);
     ros::Subscriber location_sub = nh.subscribe <offb::Data>
             ("UAV2_Data", 100, passData);
     ros::Subscriber del = nh.subscribe <std_msgs::Bool>
