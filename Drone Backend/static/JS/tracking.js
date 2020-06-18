@@ -17,6 +17,7 @@ var ros = new ROSLIB.Ros({
     const delID = document.getElementById("delID");
     var ID = delID.innerText;
     let droneID = ID.slice(-1);
+    console.log(droneID);
 
     var lat, long;
 
@@ -111,3 +112,25 @@ function StopTracking() {
     //Remove the user pushpin.
     map.entities.clear();
 }
+
+var deliver = document.getElementById("Delivered")
+
+var onDelivery = function(){
+    //service def
+    var web_inputClient = new ROSLIB.Service({
+        ros : ros,
+        name : '/Delivery',
+        serviceType : 'offb/Delivery'  //instead of webinput add .srv file name which will be in offb/src
+     });
+    var request = new ROSLIB.ServiceRequest({
+        delivered : true,
+        DroneID : droneID
+    });
+    //calling service check res.success
+    console.log('service');
+    web_inputClient.callService(request, function(res) {
+        console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
+    });
+}
+
+deliver.addEventListener("submit",  onDelivery);
