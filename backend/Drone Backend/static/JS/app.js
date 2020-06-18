@@ -2,7 +2,7 @@
 
     //for rosbridge connection
     var ros = new ROSLIB.Ros({
-            url : 'ws://http://localhost:9090'
+            url : 'ws://localhost:9090'
         });
         ros.on('connection', function() {
             console.log('Connected to websocket server.');

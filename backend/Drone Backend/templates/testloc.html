@@ -7,7 +7,6 @@
     <meta charset="utf-8" />
     <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
     <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-	<script type='text/javascript' src="{% static 'JS/tracking.js' %}"></script>
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>    
     <link rel="stylesheet" type="text/css" href= "{% static 'CSS/testloc.css' %}">
 {% endblock head_content %}
@@ -26,7 +25,7 @@
 <form id ="Delivered" method = "POST" action="{% url 'TrackPage' id=id %}"> {% csrf_token %}
     <input type = "submit" value="Delivered" name = "Delivered">
  </form>
-
+ <script type='text/javascript' src="{% static 'JS/tracking.js' %}"></script>
 
 </body>
 {% endblock body_content %}

@@ -104,14 +104,11 @@ int main(int argc, char **argv)
             else
                 ROS_ERROR("------------------------------ERROR IN CALLING CLEAR SERVICE------------------------------");
 
-<<<<<<< HEAD
-=======
             while(success){
                 ros::spinOnce();
                 rate.sleep();
             }
 
->>>>>>> a04397b5fff8120fcd564a8941794999a699a830
             ros::Time last_request = ros::Time::now();
 
             PushSrv.request.start_index = 0;

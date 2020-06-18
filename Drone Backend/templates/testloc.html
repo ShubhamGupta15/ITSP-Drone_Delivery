@@ -26,7 +26,7 @@
 <br>
 
 <div id = "text-grid">
-<div class = "text-grid-item" style = "grid-row: 2/3;"><p class = "text">ENTERED DELIVERY ID: {{ id }}</p></div>
+<div class = "text-grid-item" style = "grid-row: 2/3;"><p class = "text">ENTERED DELIVERY ID: <span id = "delID">{{ id }}</span></p></p></div>
 
 <form id ="Delivered" method = "POST" action="{% url 'TrackPage' id=id %}"> {% csrf_token %}
 <div class = "text-grid-item" style = "grid-row: 7/8;"> <input type = "submit" value="Delivered" name = "Delivered" class = "text" id="Delivered-Button"></div>

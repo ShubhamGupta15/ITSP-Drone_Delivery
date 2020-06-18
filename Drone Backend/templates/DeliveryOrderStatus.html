@@ -4,6 +4,7 @@
 
 {% block head_content %}
 <link rel="stylesheet" type="text/css" href= "{% static 'CSS/midpage.css' %}">
+<script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
 {% endblock head_content %}
 
 {% block body_content %}
@@ -24,8 +25,8 @@
 
     {% else %}
 
-        Your delivery has been recorded. Your Delivery ID is {{ id }}
-        It will soon arrive at <span id = "hostelNo">{{ hostel }}</span>
+    Your delivery has been recorded. Your Delivery ID is <span id= "deliveryID">{{ id }}</span>
+    It will soon arrive at <span id = "hostelNo">{{ hostel }}</span>
 
     If you want to track your delivery, click the 'Track Delivery' link.<br><br>
 
