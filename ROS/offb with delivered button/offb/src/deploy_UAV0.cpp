@@ -55,7 +55,7 @@ int main(int argc, char **argv)
     ros::ServiceClient set_home_client = u.serviceClient<mavros_msgs::CommandHome>
             ("/uav0/mavros/cmd/set_home");
     ros::Subscriber loc_sub= p.subscribe<sensor_msgs::NavSatFix>
-            ("/uav0/global_position/global", 20, getLoc);
+            ("/uav0/mavros/global_position/global", 20, getLoc);
     ros::Subscriber location_sub = nh.subscribe <offb::Data>
             ("UAV0_Data", 100, passData);
     ros::Subscriber del = nh.subscribe <std_msgs::Bool>
@@ -103,11 +103,6 @@ int main(int argc, char **argv)
             }
             else
                 ROS_ERROR("------------------------------ERROR IN CALLING CLEAR SERVICE------------------------------");
-
-                while(success){
-                    ros::spinOnce();
-                    rate.sleep();
-                }
 
             ros::Time last_request = ros::Time::now();
 

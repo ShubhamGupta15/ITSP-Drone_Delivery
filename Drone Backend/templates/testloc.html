@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_content %}
+    <title>Crusaders Tracking</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+	<script type='text/javascript' src="{% static 'JS/tracking.js' %}"></script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>    
+    <link rel="stylesheet" type="text/css" href= "{% static 'CSS/testloc.css' %}">
+{% endblock head_content %}
+
+{% block body_content %}
+<body onload="setTimeout(putPin(), 5000)">
+    <div id = "map-grid">
+        <div class = "map-grid-item" style = "grid-column: 1/8;grid-row: 1/10;" id="myMap"></div><br/>
+        <!--<input type="button" value="Start Continuous Tracking" onclick="StartTracking()"/>-->
+        <div class = "map-grid-item" style = "grid-column: 4/5;grid-row: 10/11;" ><input type="button" class = "text" id="stop-track-button" value="Stop Continuous Tracking" onclick="StopTracking()"/></div>
+        <!--<input type="button" value="Put Pin" onclick="putPin()"/>-->
+        <div class = "map-grid-item" style = "grid-column: 2/4;grid-row: 10/11;"><input type="button" class = "text" id = "push-button" value="Push" onclick="startPush()"/></div>
+    
+    </div>
+
+<br>
+
+<div id = "text-grid">
+<div class = "text-grid-item" style = "grid-row: 2/3;"><p class = "text">ENTERED DELIVERY ID: {{ id }}</p></div>
+
+<form id ="Delivered" method = "POST" action="{% url 'TrackPage' id=id %}"> {% csrf_token %}
+<div class = "text-grid-item" style = "grid-row: 7/8;"> <input type = "submit" value="Delivered" name = "Delivered" class = "text" id="Delivered-Button"></div>
+ </form>
+</div>
+
+</body>
+{% endblock body_content %}
