@@ -141,3 +141,6 @@ var onDelivery = function(){
     web_inputClient.callService(request, function(res) {
         console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
     });
+}
+
+deliver.addEventListener("click",  onDelivery);
