@@ -7,12 +7,12 @@
     <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
 </head>
-<body onload="setTimeout(putPin(), 5000)">
+<body onload="startPush()">
     <div id="myMap" style="position:relative;width:600px;height:400px;"></div><br/>
     <!--<input type="button" value="Start Continuous Tracking" onclick="StartTracking()"/>-->
-    <input type="button" value="Stop Continuous Tracking" onclick="StopTracking()"/>
+    <input type="button" value="Stop Continuous Tracking" id="stop-track-button" onclick="StopTracking()"/>
     <!--<input type="button" value="Put Pin" onclick="putPin()"/>-->
-    <input type="button" value="Push" onclick="startPush()"/>
+    <input type="button" value="Push" id="push-button" onclick="startPush()"/>
     <form id ="Delivered">
        <input type = "submit" value="Delivered">
     </form>

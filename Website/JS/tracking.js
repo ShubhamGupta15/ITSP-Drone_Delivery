@@ -13,25 +13,45 @@ var ros = new ROSLIB.Ros({
         console.log('Connection to websocket server closed.');
     });
 
-    //fetching droneID to track from URL param
-    var queryString = decodeURIComponent(window.location.search);
-    queryString = queryString.substring(1);
-    var trackID = queryString.split("&");
+    //fetching droneID
+    const delID = document.getElementById("delID");
+    var ID = delID.innerText;
+    let droneID = ID.slice(-1);
 
     var lat, long;
 
     //subscription
-    var getloc = new ROSLIB.Topic({
-      ros : ros,
-      name : '/mavros/global_position/global',
-      messageType : 'sensor_msgs/NavSatFix'
-    });
+    if (droneID == '1'){
+      var getloc = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav0/mavros/global_position/global',
+        messageType : 'sensor_msgs/NavSatFix'
+      });
+    }
+    else if (droneID == '2'){
+      var getloc = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav1/mavros/global_position/global',
+        messageType : 'sensor_msgs/NavSatFix'
+      });
+    }
+    else if (droneID == '3'){
+      var getloc = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav2/mavros/global_position/global',
+        messageType : 'sensor_msgs/NavSatFix'
+      });
+    }
 
     getloc.subscribe(function(message) {
       lat = message.latitude;
       long = message.longitude;
 
     });
+
+    window.onload=function(){
+  document.getElementById("push-button").style.display='none';
+}
 
 var map, watchId, userPin;
 
@@ -67,7 +87,10 @@ function UsersLocationUpdated() {
 var tid;
 
 function startPush(){
+  setTimeout(putPin(), 2000);
   tid = setTimeout(pushLoc, 2000);
+  document.getElementById("stop-track-button").style.display='block';
+  document.getElementById("push-button").style.display='none';
 }
 
 function pushLoc(){
@@ -79,7 +102,7 @@ function pushLoc(){
   console.log('Updated '+lat + ' ' +long);
 
   //Center the map on the user's location.
-  map.setView({ center: loc });
+  map.setView({ center: loc, zoom:16 });
 
   tid = setTimeout(pushLoc, 5000);
 }
@@ -94,26 +117,7 @@ function StopTracking() {
     clearTimeout(tid);
     //Remove the user pushpin.
     map.entities.clear();
+  document.getElementById("push-button").style.display='block';
+  document.getElementById("stop-track-button").style.display='none';
+
 }
-
-var deliver = document.getElementById("Delivered")
-
-var onDelivery = function(){
-    //service def
-    var web_inputClient = new ROSLIB.Service({
-        ros : ros,
-        name : '/Delivery',
-        serviceType : 'offb/Delivery'  //instead of webinput add .srv file name which will be in offb/src
-     });
-    var request = new ROSLIB.ServiceRequest({
-        delivered : true,
-        DroneID : '1'
-    });
-    //calling service check res.success
-    console.log('service');
-    web_inputClient.callService(request, function(res) {
-        console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
-    });
-}
-
-deliver.addEventListener("submit",  onDelivery);

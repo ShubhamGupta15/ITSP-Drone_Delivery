@@ -49,6 +49,10 @@ var ros = new ROSLIB.Ros({
 
     });
 
+    window.onload=function(){
+  document.getElementById("push-button").style.display='none';
+}
+
 var map, watchId, userPin;
 
 function GetMap()
@@ -85,6 +89,8 @@ var tid;
 function startPush(){
   setTimeout(putPin(), 2000);
   tid = setTimeout(pushLoc, 2000);
+  document.getElementById("stop-track-button").style.display='block';
+  document.getElementById("push-button").style.display='none';
 }
 
 function pushLoc(){
@@ -111,4 +117,8 @@ function StopTracking() {
     clearTimeout(tid);
     //Remove the user pushpin.
     map.entities.clear();
+    function showButton(){
+  document.getElementById("push-button").style.display='block';
+  document.getElementById("stop-track-button").style.display='none';
+  }
 }
