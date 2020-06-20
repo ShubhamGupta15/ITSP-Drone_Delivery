@@ -49,7 +49,6 @@ var ros = new ROSLIB.Ros({
 
     });
 
-
 var map, watchId, userPin;
 
 function GetMap()
@@ -83,6 +82,10 @@ function UsersLocationUpdated() {
 
 var tid;
 
+function startPush(){
+  putPin();
+  tid = setTimeout(pushLoc, 2000);
+}
 
 function pushLoc(){
   var loc = new Microsoft.Maps.Location(lat, long);
@@ -93,7 +96,7 @@ function pushLoc(){
   console.log('Updated '+lat + ' ' +long);
 
   //Center the map on the user's location.
-  map.setView({ center: loc, zoom:16 });
+  map.setView({ center: loc });
 
   tid = setTimeout(pushLoc, 5000);
 }
@@ -101,7 +104,6 @@ function pushLoc(){
 function putPin(){
   userPin = new Microsoft.Maps.Pushpin(map.getCenter(), { visible: false });
     map.entities.push(userPin);
-    tid = setTimeout(pushLoc, 5000);
 }
 
 function StopTracking() {
@@ -109,8 +111,6 @@ function StopTracking() {
     clearTimeout(tid);
     //Remove the user pushpin.
     map.entities.clear();
-    function showButton(){
-  }
 }
 
 var deliver = document.getElementById("Delivered")
