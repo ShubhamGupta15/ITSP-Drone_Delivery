@@ -9,4 +9,4 @@ First install django 3.0 -
 	3.run 'pipenv shell'
 
 
-Next, just run 'python manage.py runserver' and type 'http://127.0.0.1:8000/home/' in the address bar.
+Next, just run 'python3 manage.py runserver' and type 'http://127.0.0.1:8000/home/' in the address bar.

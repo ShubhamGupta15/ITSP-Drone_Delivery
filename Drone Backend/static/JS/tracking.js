@@ -49,9 +49,6 @@ var ros = new ROSLIB.Ros({
 
     });
 
-    window.onload=function(){
-  document.getElementById("push-button").style.display='none';
-}
 
 var map, watchId, userPin;
 
@@ -86,12 +83,6 @@ function UsersLocationUpdated() {
 
 var tid;
 
-function startPush(){
-  setTimeout(putPin(), 2000);
-  tid = setTimeout(pushLoc, 2000);
-  document.getElementById("stop-track-button").style.display='block';
-  document.getElementById("push-button").style.display='none';
-}
 
 function pushLoc(){
   var loc = new Microsoft.Maps.Location(lat, long);
@@ -110,6 +101,7 @@ function pushLoc(){
 function putPin(){
   userPin = new Microsoft.Maps.Pushpin(map.getCenter(), { visible: false });
     map.entities.push(userPin);
+    tid = setTimeout(pushLoc, 5000);
 }
 
 function StopTracking() {
@@ -118,7 +110,27 @@ function StopTracking() {
     //Remove the user pushpin.
     map.entities.clear();
     function showButton(){
-  document.getElementById("push-button").style.display='block';
-  document.getElementById("stop-track-button").style.display='none';
   }
 }
+
+var deliver = document.getElementById("Delivered")
+
+var onDelivery = function(){
+    //service def
+    var web_inputClient = new ROSLIB.Service({
+        ros : ros,
+        name : '/Delivery',
+        serviceType : 'offb/Delivery'  //instead of webinput add .srv file name which will be in offb/src
+     });
+    var request = new ROSLIB.ServiceRequest({
+        delivered : true,
+        DroneID : droneID
+    });
+    //calling service check res.success
+    console.log('service');
+    web_inputClient.callService(request, function(res) {
+        console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
+    });
+}
+
+deliver.addEventListener("click",  onDelivery);

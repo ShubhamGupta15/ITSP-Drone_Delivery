@@ -12,7 +12,7 @@
     <!--<input type="button" value="Start Continuous Tracking" onclick="StartTracking()"/>-->
     <input type="button" value="Stop Continuous Tracking" id="stop-track-button" onclick="StopTracking()"/>
     <!--<input type="button" value="Put Pin" onclick="putPin()"/>-->
-    <input type="button" value="Push" id="push-button" onclick="startPush()"/>
+    <input type="button" value="Push" id="push-button" onclick="setTimeout(putPin(), 2000);"/>
     <form id ="Delivered">
        <input type = "submit" value="Delivered">
     </form>
