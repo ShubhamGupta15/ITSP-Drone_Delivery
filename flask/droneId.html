@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title> Drone Delivery Crusaders</title>
+    <style>
+        #main-heading {
+            text-align: center;
+            font-family: Algerian;
+            font-size: 80px;
+            background-color: rebeccapurple;
+            margin: 20px;
+        }
+
+
+        .form{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <h1 id = "main-heading">Crusaders</h1>
+    </header>
+ {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class='flashes'>
+    {% for message in messages %}<li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    <form action="" method="post" class="form" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.droneCode.label }}<br>
+            {{ form.droneCode(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+</body>
+</html>
