@@ -1,5 +1,4 @@
 #myMap{
-    
     border: 3px solid rgb(245, 245, 245);
 }
 #stop-track-button{
@@ -29,11 +28,11 @@
 
 #push-button:hover{
     border: 3px solid rgb(195, 195, 195);
-    color: rgb(195, 195, 195);    
+    color: rgb(195, 195, 195);
 }
 
 /*#Delivered-Button{
-    
+
     background: none;
     border: 3px solid rgb(245, 245, 245);
     border-radius: 10px;
@@ -46,7 +45,7 @@
 
 #Delivered-Button:hover{
     border: 3px solid rgb(195, 195, 195);
-    color: rgb(195, 195, 195);    
+    color: rgb(195, 195, 195);
 }
 
 #map-grid{
@@ -71,10 +70,10 @@
     float: right;
     height: 800px;
     border: 3px solid rgb(245, 245, 245);
-    width: 400px;    
+    width: 400px;
     margin-right: 27.4%;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
-    
+
 }
