@@ -27,8 +27,7 @@ document.getElementById("Delivered").disabled = true;
       var getloc = new ROSLIB.Topic({
         ros : ros,
         name : '/uav0/mavros/global_position/global',
-        messageType : 'sensor_msgs/NavSatFix'
-        messageType : 'sensor_msgs/NavSatFix'
+        messageType : 'sensor_msgs/NavSatFix'        
       });
     }
     else if (droneID == '2'){
