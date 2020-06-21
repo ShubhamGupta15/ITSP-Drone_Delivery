@@ -18,16 +18,14 @@ var ros = new ROSLIB.Ros({
     var ID = delID.innerText;
     let droneID = ID.slice(-1);
 
-document.getElementById("Delivered").disabled = true;
 
-    var lat, long, reached;
+    var lat, long, alt, reached;
 
     //subscription
     if (droneID == '1'){
       var getloc = new ROSLIB.Topic({
         ros : ros,
         name : '/uav0/mavros/global_position/global',
-        messageType : 'sensor_msgs/NavSatFix'
         messageType : 'sensor_msgs/NavSatFix'
       });
     }
@@ -49,6 +47,7 @@ document.getElementById("Delivered").disabled = true;
     getloc.subscribe(function(message) {
       lat = message.latitude;
       long = message.longitude;
+      alt = message.altitude;
 
     });
 
@@ -78,12 +77,6 @@ document.getElementById("Delivered").disabled = true;
     done.subscribe(function(message) {
       reached = message.wp_seq;
     });
-
-// adding delivery button activation and flash message
-if(reached==2){
-    document.getElementById("flash").innerHTML="Your Delivery has reached its destination. Press Delivered button after collecting it."
-    document.getElementById("Delivered").disabled = false;
-}
 
 var map, watchId, userPin;
 
@@ -117,6 +110,7 @@ function UsersLocationUpdated() {
 */
 
 var tid;
+var trying;
 
 function startPush(){
   putPin();
@@ -132,9 +126,23 @@ function pushLoc(){
   console.log('Updated '+lat + ' ' +long);
 
   //Center the map on the user's location.
-  map.setView({ center: loc });
+  map.setView({ center: loc, zoom:16 });
 
   tid = setTimeout(pushLoc, 5000);
+}
+
+// adding delivery button activation and flash message
+function deliveryDone(){
+  if(reached==2 && alt < 1){
+    document.getElementById("flash").innerHTML="<p>Your Delivery has reached its destination. Press Delivered button after collecting it.</p>"
+
+
+    document.getElementById("deliveredButton").disabled = false;
+  }
+  document.getElementById("longitude").innerText = long;
+  document.getElementById("latitude").innerText = lat;
+  document.getElementById("altitude").innerText = Math.round((alt)*10)/10 + 68.3;  
+  trying = setTimeout(deliveryDone, 1000);
 }
 
 function putPin(){
@@ -148,6 +156,7 @@ function StopTracking() {
     //Remove the user pushpin.
     map.entities.clear();
 }
+deliveryDone();
 
 var deliver = document.getElementById("Delivered")
 
@@ -167,6 +176,7 @@ var onDelivery = function(){
     web_inputClient.callService(request, function(res) {
         console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
     });
+    clearTimeout(trying);
 }
 
 
