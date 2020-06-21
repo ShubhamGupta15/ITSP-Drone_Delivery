@@ -18,13 +18,16 @@ var ros = new ROSLIB.Ros({
     var ID = delID.innerText;
     let droneID = ID.slice(-1);
 
-    var lat, long;
+document.getElementById("Delivered").disabled = true;
+
+    var lat, long, reached;
 
     //subscription
     if (droneID == '1'){
       var getloc = new ROSLIB.Topic({
         ros : ros,
         name : '/uav0/mavros/global_position/global',
+        messageType : 'sensor_msgs/NavSatFix'
         messageType : 'sensor_msgs/NavSatFix'
       });
     }
@@ -48,6 +51,39 @@ var ros = new ROSLIB.Ros({
       long = message.longitude;
 
     });
+
+    //subscription for delivered button
+    if (droneID == '1'){
+      var done = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav0/mavros/mission/reached',
+        messageType : 'mavros_msgs/WaypointReached'
+      });
+    }
+    else if (droneID == '2'){
+      var done = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav1/mavros/mission/reached',
+        messageType : 'mavros_msgs/WaypointReached'
+      });
+    }
+    else if (droneID == '3'){
+      var done = new ROSLIB.Topic({
+        ros : ros,
+        name : '/uav2/mavros/mission/reached',
+        messageType : 'mavros_msgs/WaypointReached'
+      });
+    }
+
+    done.subscribe(function(message) {
+      reached = message.wp_seq;
+    });
+
+// adding delivery button activation and flash message
+if(reached==2){
+    document.getElementById("flash").innerHTML="Your Delivery has reached its destination. Press Delivered button after collecting it."
+    document.getElementById("Delivered").disabled = false;
+}
 
 var map, watchId, userPin;
 
@@ -132,5 +168,6 @@ var onDelivery = function(){
         console.log('Result for service call on '+ web_inputClient.name + ': '+ res.success);
     });
 }
+
 
 deliver.addEventListener("submit",  onDelivery);
