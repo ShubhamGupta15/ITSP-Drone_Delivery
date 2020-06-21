@@ -12,7 +12,7 @@
 #include <std_msgs/Bool.h>
 #include <sensor_msgs/NavSatFix.h>
 #include <string>
-#include "AssignWP_2.h"
+#include "AssignWP_0.h"
 #include "offb/Data.h"
 
 std::vector <mavros_msgs::Waypoint> listOfWP; 
@@ -20,11 +20,12 @@ std::vector <mavros_msgs::Waypoint> listOfWP;
 void getStatus(std_msgs::Bool delry);
 void getLoc(sensor_msgs::NavSatFix gpsLoc);
 
-bool success = true;
+bool success = true, firstTime = false;
 bool onClick = false;
 int flag;
 float latitude, longitude;
 std::string hostel;
+ros::Time clickTime;
 
 mavros_msgs::State current_state;
 void state_cb(const mavros_msgs::State::ConstPtr& msg){
@@ -54,8 +55,8 @@ int main(int argc, char **argv)
             ("/uav2/mavros/mission/clear");
     ros::ServiceClient set_home_client = u.serviceClient<mavros_msgs::CommandHome>
             ("/uav2/mavros/cmd/set_home");
-    ros::Subscriber loc_sub = p.subscribe<sensor_msgs::NavSatFix>
-            ("uav2/mavros/global_position/global", 20, getLoc);
+    ros::Subscriber loc_sub= p.subscribe<sensor_msgs::NavSatFix>
+            ("/uav2/mavros/global_position/global", 20, getLoc);
     ros::Subscriber location_sub = nh.subscribe <offb::Data>
             ("UAV2_Data", 100, passData);
     ros::Subscriber del = nh.subscribe <std_msgs::Bool>
@@ -111,13 +112,14 @@ int main(int argc, char **argv)
 
             ros::Time last_request = ros::Time::now();
 
-            PushSrv.request.start_index = 0;
-            PushSrv.request.waypoints = listOfWP;
-
             set_home_srv.request.current_gps = false;
             set_home_srv.request.latitude = latitude;
             set_home_srv.request.longitude = longitude;
             set_home_srv.request.altitude = 0;
+
+
+            PushSrv.request.start_index = 0;
+            PushSrv.request.waypoints = listOfWP;
 
             if(clientPush.call(PushSrv))
             {
@@ -170,6 +172,86 @@ int main(int argc, char **argv)
 
         
         }
+        if (ros::Time::now() - clickTime > ros::Duration(900.0) && firstTime){
+            firstTime = false;
+            success = false;
+            listOfWP = waypoint_in(hostel, 1);
+            ROS_INFO("Timeout! Automatic Return Initiated!!!");
+
+            //clearing all previous missons
+            if(clientClear.call(ClearSrv))
+            {
+                if(ClearSrv.response.success)	
+                    ROS_INFO("WAYPOINTS CLEARED");
+                else
+                    ROS_ERROR("ERROR IN CLEARING WAYPOINTS");
+            }
+            else
+                ROS_ERROR("------------------------------ERROR IN CALLING CLEAR SERVICE------------------------------");
+
+                while(success){
+                    ros::spinOnce();
+                    rate.sleep();
+                }
+
+            ros::Time last_request = ros::Time::now();
+
+            set_home_srv.request.current_gps = false;
+            set_home_srv.request.latitude = latitude;
+            set_home_srv.request.longitude = longitude;
+            set_home_srv.request.altitude = 0;
+
+
+            PushSrv.request.start_index = 0;
+            PushSrv.request.waypoints = listOfWP;
+
+            if(clientPush.call(PushSrv))
+            {
+                if(PushSrv.response.success)
+                    ROS_INFO("Number of points transferred: %ld", (long int)PushSrv.response.wp_transfered);
+                else
+                    ROS_ERROR("------------------------------ERROR IN SENDING WAYPOINTS------------------------------");
+            }
+            else
+                ROS_ERROR("------------------------------ERROR IN CALLING PUSH SERVICE------------------------------");
+
+            //setting home coord
+            if (set_home_client.call(set_home_srv))
+                {
+                    if(set_home_srv.response.success)
+                        ROS_INFO("Home was set to new value ");
+                    else
+                        ROS_ERROR("Home position couldn't been changed"); 
+                    
+                }
+                else
+                    ROS_ERROR("Service could not be called");
+
+            
+            bool misson = true;
+            bool arm = true;
+
+    
+            if( misson && current_state.mode != "AUTO.MISSION" ){
+                if( set_mode_client.call(offb_set_mode) &&
+                    offb_set_mode.response.mode_sent){
+                        ROS_INFO("Return Initiated");
+                    }
+                    misson = false;
+                }
+                last_request = ros::Time::now();
+            }
+            if( arm && !current_state.armed ){
+                if( arming_client.call(arm_cmd) &&
+                    arm_cmd.response.success){
+                    ROS_INFO("Vehicle armed");
+                    arm = false;
+                }
+                last_request = ros::Time::now();
+            }
+
+        }
+
         ros::spinOnce();
         rate.sleep();
     }
@@ -189,6 +271,8 @@ void passData(offb::Data hostel_ID){
     listOfWP = waypoint_in(hostel_ID.Hostel, 2);
     onClick=true;
     flag = 1;
+    clickTime = ros::Time::now();
+    firstTime = true;
 }
 
 void getStatus(std_msgs::Bool delry){
