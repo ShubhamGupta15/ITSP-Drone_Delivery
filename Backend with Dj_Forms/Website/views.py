@@ -90,10 +90,7 @@ def DeliveryOrderStatusView(request, id = None):
         return render(request, "DeliveryOrderStatus.html", context)
 
     else :
-        context = {
-            "already_seen": True
-        }
-        return render(request, "DeliveryOrderStatus.html",context)
+        redirect("http://127.0.0.1:8000/home/track/%d" % id)
 
 def TrackPageView(request, id):
 
