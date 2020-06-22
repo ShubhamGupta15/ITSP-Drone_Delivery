@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Drone(models.Model):
     droneID = models.IntegerField(blank = False , unique = True)
+    deploy_pin = models.IntegerField(blank = False,unique = True)
     busy = models.BooleanField(default = False,blank = True)
     HostelNo = models.CharField(max_length = 10, blank = True, null = True)
 

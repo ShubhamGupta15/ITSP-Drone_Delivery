@@ -6,18 +6,21 @@ from datetime import datetime
 import threading
 # Create your views here.
 
-def updateStatus(delID):
+def updateDroneStatus(delID):
+    obj = Delivery_Order.objects.get(deliveryID = delID)
+    drone_obj = Drone.objects.get(droneID = obj.drone)
+    if drone_obj.busy == True:
+        drone_obj.busy = False
+        drone_obj.save()
+        print("Changed Drone Status")
+
+def updateDelStatus(delID):
         
     obj = Delivery_Order.objects.get(deliveryID = delID)
     if obj.orderstatus == False:
         obj.orderstatus = True
         obj.save()
         print("Changed Del Status")
-    drone_obj = Drone.objects.get(droneID = obj.drone)
-    if drone_obj.busy == True:
-        drone_obj.busy = False
-        drone_obj.save()
-        print("Changed Drone Status")    
 
 def MainPageView(request):
 
@@ -55,9 +58,10 @@ def MainPageView(request):
             delivery.deliveryID = 12000 + 10*todays_orders + assigned_droneID
             delivery.save()
 
-            returnTimer = threading.Timer(900.0, updateStatus,[delivery.deliveryID])
-            returnTimer.start()
-
+            delTimer = threading.Timer(900.0, updateDroneStatus,[delivery.deliveryID])
+            delTimer.start()
+            droneTimer = threading.Timer(1500.0, updateDroneStatus,[delivery.deliveryID])
+            droneTimer.start()
 
             request.session['order_placed'] = True
 
@@ -90,10 +94,7 @@ def DeliveryOrderStatusView(request, id = None):
         return render(request, "DeliveryOrderStatus.html", context)
 
     else :
-        context = {
-            "already_seen": True
-        }
-        return render(request, "DeliveryOrderStatus.html",context)
+        redirect("http://127.0.0.1:8000/home/track/%d" % id)
 
 def TrackPageView(request, id):
 
@@ -101,9 +102,9 @@ def TrackPageView(request, id):
         order = Delivery_Order.objects.get(deliveryID = id)
         order.orderstatus = True
         order.save()
-        drone = Drone.objects.get(droneID = order.drone)
-        drone.busy = False
-        drone.save()
+
+        T = threading.Timer(600.0,updateDroneStatus,[id])
+        T.start()
         
         return HttpResponseRedirect('http://127.0.0.1:8000/home/track/thankyou/')
     
