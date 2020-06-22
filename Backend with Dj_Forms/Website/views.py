@@ -7,6 +7,7 @@ import threading
 # Create your views here.
 
 def updateDroneStatus(delID):
+    obj = Delivery_Order.objects.get(deliveryID = delID)
     drone_obj = Drone.objects.get(droneID = obj.drone)
     if drone_obj.busy == True:
         drone_obj.busy = False
