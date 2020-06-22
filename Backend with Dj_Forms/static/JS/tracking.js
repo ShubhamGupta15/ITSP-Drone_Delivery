@@ -137,7 +137,7 @@ function deliveryDone(){
     document.getElementById("flash").innerHTML="<p>Your Delivery has reached its destination. Press Delivered button after collecting it.</p>"
 
 
-    document.getElementById("deliveredButton").disabled = false;
+    document.getElementById("Delivered-Button").disabled = false;
   }
   document.getElementById("longitude").innerText = long;
   document.getElementById("latitude").innerText = lat;
