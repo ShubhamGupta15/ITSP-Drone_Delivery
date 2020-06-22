@@ -134,9 +134,9 @@ function pushLoc(){
 // adding delivery button activation and flash message
 function deliveryDone(){
   if(reached==2 && alt < 1){
-    document.getElementById("flash").innerHTML="<p>Your Delivery has reached its destination. Press Delivered button after collecting it.</p>"
+    document.getElementById("flash").innerHTML="<p>Your Delivery has reached its destination. Press Delivered button after collecting it.</p>";
 
-    document.getElementById("deliveredButton").innerHTML = "<input type = "submit" value="Delivered" name = "Delivered" class = "text" id = "Delivered-Button">";
+    document.getElementById("deliveredButton").innerHTML = "<input type = \"submit\" value=\"Delivered\" name = \"Delivered\" class = \"text\" id = \"Delivered-Button\">";
   }
   document.getElementById("longitude").innerText = long;
   document.getElementById("latitude").innerText = lat;

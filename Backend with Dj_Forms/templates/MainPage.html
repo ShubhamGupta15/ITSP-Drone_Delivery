@@ -10,7 +10,7 @@
 
 <header class = "main-heading"><span id = "C">C</span>rusaders</header>
 
-<form action = '' method = 'POST'> {% csrf_token %}
+<form action = '' method = 'POST' id = "DelForm"> {% csrf_token %}
     {{ form.non_field_errors }}
     <div class = "drone-form-grid">    
         <div class = "grid-order-form-item" style = "grid-row: 2/3;grid-column: 2/3;"><label for = "{{ form.hostel.id_for_label }}" class = "text">{{ form.hostel.label }}</label></div>
@@ -33,5 +33,12 @@
 </form>
 
 </div>
+
+<script>
+    var submitForm = document.getElementById("DelForm");
+    submitForm.addEventListener("submit" , function(){
+        document.getElementById("SubmitDelivery").disabled = true;
+    });
+</script>
 
 {% endblock body_content %}
