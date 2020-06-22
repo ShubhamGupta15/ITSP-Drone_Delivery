@@ -156,6 +156,7 @@ int main(int argc, char **argv)
                     }
                     else if(flag == 2){
                         ROS_INFO("Return Initiated");
+                        firstTime = false;
                     }
                     misson = false;
                 }
