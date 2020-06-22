@@ -23,19 +23,20 @@
     </div>
 
 <br>
-<div class = "text" id = "flash"></div>
-<div class ="text">
-    <ul>
-        <li> Latitude: <span id = "latitude"></span>
-        <li> Longitude: <span id = "longitude"></span>
-        <li> Altitude: <span id = "altitude"></span>
-    </ul>
-</div>
 <form id ="Delivered" method = "POST" action="{% url 'TrackPage' id=id %}"> {% csrf_token %}
+    <div id = "text-grid">
+    <div class = "text" style = "grid-row: 3/4;">ENTERED DELIVERY ID: <span id = "delID">{{ id }}</span></div>
+    <div class ="text" style = "grid-row: 4/5;">
+        <ul>
+            <li> Latitude: <span id = "latitude"></span>
+            <li> Longitude: <span id = "longitude"></span>
+            <li> Altitude: <span id = "altitude"></span>
+        </ul>
+    </div>
 
-<div id = "text-grid">
-    <div class = "text-grid-item" style = "grid-row: 2/3;"><p class = "text">ENTERED DELIVERY ID: <span id = "delID">{{ id }}</span></p></div>        
-    <div class = "text-grid-item" style = "grid-row: 3/4;" id = "deliverdButton"></div>
+    <div class = "text" id = "flash" style = "grid-row: 5/6;"></div>
+    
+    <div class = "text-grid-item" style = "grid-row: 6/7;" id = "deliveredButton"></div>
 </div>
 </form>
 <script type='text/javascript' src="{% static 'JS/tracking.js' %}"></script>

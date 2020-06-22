@@ -77,3 +77,7 @@
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
     
 }
+
+#flash{
+    font-size: 22px;
+}
