@@ -136,12 +136,11 @@ function deliveryDone(){
   if(reached==2 && alt < 1){
     document.getElementById("flash").innerHTML="<p>Your Delivery has reached its destination. Press Delivered button after collecting it.</p>"
 
-
-    document.getElementById("Delivered-Button").disabled = false;
+    document.getElementById("deliveredButton").innerHTML = "<input type = "submit" value="Delivered" name = "Delivered" class = "text" id = "Delivered-Button">";
   }
   document.getElementById("longitude").innerText = long;
   document.getElementById("latitude").innerText = lat;
-  document.getElementById("altitude").innerText = Math.round((alt)*10)/10 + 68.3;  
+  document.getElementById("altitude").innerText = Math.round((alt)*10)/10 + 68.4;  
   trying = setTimeout(deliveryDone, 1000);
 }
 
