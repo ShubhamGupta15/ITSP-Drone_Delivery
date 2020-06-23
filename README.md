@@ -13,7 +13,7 @@ The working package(with web integration) is offb-working2.
 6. Copy the launch_rosbridge.sh launch-common.sh and launch-offb.sh to your catkin_ws root.
 7. Check and modify permisson of all files to executables.
 8. From the worlds folder, add all the contents to both catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and sitl_gazebo/models.
-9. In catkin_ws/src/Firmware/launch/mavros_posix_sitl.launch in line 15 change the world file at the end of the line to iitb2.world from empty.world
+9. In catkin_ws/src/Firmware/launch/multi_uav_mavros_sitl.launch in line 8 change the world file at the end of the line to iitb2.world from empty.world
 10. Run catkin build. (not catkin_make)
 11. Install QGroundControl.
 12. Setup Done!!
@@ -26,6 +26,4 @@ How to run simulation:
 3. Run QGroundControl.
 4. Open the website in the websie folder of the repo.
 5. Enter the commands to the delivery form.
-6. The simulation and the QGroundControl will recieve commands and the misson will run**.
-
-**Currently misson only supported for hostel 5 rest will be added soon.
+6. The simulation and the QGroundControl will recieve commands and the misson will run.
