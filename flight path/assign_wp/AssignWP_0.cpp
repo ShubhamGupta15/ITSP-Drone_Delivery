@@ -649,7 +649,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[1].param1 = 15;
             wp_msg[1].param2 = 0;
             wp_msg[1].param3 = 0;
-            //wp_msg[1].param4 = 0;
+            wp_msg[1].param4 = 286.423;
             wp_msg[1].x_lat = 19.1329976;
             wp_msg[1].y_long = 72.9138136;
             wp_msg[1].z_alt = 21.0;
@@ -661,7 +661,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].param1 = 15;
             wp_msg[2].param2 = 0;
             wp_msg[2].param3 = 0;
-            //wp_msg[2].param4 = 0;
+            wp_msg[2].param4 = 286.423;
             wp_msg[2].x_lat = 19.13347850;
             wp_msg[2].y_long = 72.91209700;
             wp_msg[2].z_alt = 21.0;
@@ -670,7 +670,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
-                wp_msg[2].param4 = 182.744;
+                wp_msg[2].param4 = 106.423;
                 wp_msg[1].param4 = 162.31;
                 wp_msg[0].param4 = 162.31;
                 wp_msg[0].command = 21;
@@ -711,7 +711,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[1].param1 = 15;
             wp_msg[1].param2 = 0;
             wp_msg[1].param3 = 0;
-            //wp_msg[1].param4 = 0;
+            wp_msg[1].param4 = 286.508;
             wp_msg[1].x_lat = 19.1329976;
             wp_msg[1].y_long = 72.9138136;
             wp_msg[1].z_alt = 21.0;
@@ -723,7 +723,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].param1 = 15;
             wp_msg[2].param2 = 0;
             wp_msg[2].param3 = 0;
-            //wp_msg[2].param4 = 0;
+            wp_msg[2].param4 = 286.508;
             wp_msg[2].x_lat = 19.13532390;
             wp_msg[2].y_long = 72.90555510;
             wp_msg[2].z_alt = 21.0;
@@ -732,7 +732,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
-                wp_msg[2].param4 = 182.744;
+                wp_msg[2].param4 = 106.508;
                 wp_msg[1].param4 = 162.31;
                 wp_msg[0].param4 = 162.31;
                 wp_msg[0].command = 21;
@@ -773,7 +773,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[1].param1 = 15;
             wp_msg[1].param2 = 0;
             wp_msg[1].param3 = 0;
-            //wp_msg[1].param4 = 0;
+            wp_msg[1].param4 = 10.517;
             wp_msg[1].x_lat = 19.1329976;
             wp_msg[1].y_long = 72.9138136;
             wp_msg[1].z_alt = 21.0;
@@ -785,7 +785,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].param1 = 15;
             wp_msg[2].param2 = 0;
             wp_msg[2].param3 = 0;
-            //wp_msg[2].param4 = 0;
+            wp_msg[2].param4 = 10.517;
             wp_msg[2].x_lat = 19.13745370;
             wp_msg[2].y_long = 72.91468400;
             wp_msg[2].z_alt = 21.0;
@@ -794,7 +794,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
-                wp_msg[2].param4 = 182.744;
+                wp_msg[2].param4 = 190.517;
                 wp_msg[1].param4 = 162.31;
                 wp_msg[0].param4 = 162.31;
                 wp_msg[0].command = 21;
@@ -835,7 +835,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[1].param1 = 15;
             wp_msg[1].param2 = 0;
             wp_msg[1].param3 = 0;
-            //wp_msg[1].param4 = 0;
+            wp_msg[1].param4 = 311.505;
             wp_msg[1].x_lat = 19.1329976;
             wp_msg[1].y_long = 72.9138136;
             wp_msg[1].z_alt = 21.0;
@@ -847,7 +847,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[2].param1 = 15;
             wp_msg[2].param2 = 0;
             wp_msg[2].param3 = 0;
-            //wp_msg[2].param4 = 0;
+            wp_msg[2].param4 = 311.505;
             wp_msg[2].x_lat = 19.13654270;
             wp_msg[2].y_long = 72.90959850;
             wp_msg[2].z_alt = 21.0;
@@ -856,7 +856,7 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
                 wp_msg[2].command = 22;
                 wp_msg[2].is_current = true;
                 wp_msg[2].autocontinue = true;
-                wp_msg[2].param4 = 182.744;
+                wp_msg[2].param4 = 131.505;
                 wp_msg[1].param4 = 162.31;
                 wp_msg[0].param4 = 162.31;
                 wp_msg[0].command = 21;
