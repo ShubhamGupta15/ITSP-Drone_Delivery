@@ -142,7 +142,7 @@ function deliveryDone(){
   }
   document.getElementById("longitude").innerText = long;
   document.getElementById("latitude").innerText = lat;
-  document.getElementById("altitude").innerText = Math.round((alt)*10)/10 + 68.4;  
+  document.getElementById("altitude").innerText = Math.round((alt + 68.4)*10) /10;  
   trying = setTimeout(deliveryDone, 1000);
 }
 
