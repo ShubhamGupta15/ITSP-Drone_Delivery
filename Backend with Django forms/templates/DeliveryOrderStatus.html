@@ -9,6 +9,9 @@
 {% endblock head_content %}
 
 {% block body_content %}
+<script language="JavaScript">
+    javascript:window.history.forward(1);
+</script>
 
 <p class = "text" id = "order-text">
     
@@ -40,7 +43,6 @@
 </p>
 
 <script type = 'text/javascript' src = "{% static 'JS/app.js' %}"></script>
-<script type = 'text/javascript' src = "{% static 'JS/reload.js' %}"></script>
 
 
 {% endblock body_content %}

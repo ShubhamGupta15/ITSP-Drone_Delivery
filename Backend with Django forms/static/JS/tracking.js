@@ -112,7 +112,6 @@ function UsersLocationUpdated() {
 
 var tid;
 var trying;
-
 function startPush(){
   putPin();
   tid = setTimeout(pushLoc, 2000);

@@ -3,7 +3,13 @@
 {% load static %}
 
 {% block head_content %}
+    <meta http-equiv="Cache-Control" content=" private no-cache, no-store, must-revalidate max-age=0 proxy-revalidate s-maxage=0" >
+    <meta http-equiv="Pragma" content="no-cache" >
+    <meta http-equiv="Expires" content="0" >
     <link rel = "stylesheet" type = "text/css" href= "{% static 'CSS/confirm.css' %}">
+    <script language="JavaScript">
+        javascript:window.history.forward(1);
+    </script>
 {% endblock head_content %}
 
 {% block body_content %}

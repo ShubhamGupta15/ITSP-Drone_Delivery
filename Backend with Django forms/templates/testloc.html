@@ -12,6 +12,12 @@
 {% endblock head_content %}
 
 {% block body_content %}
+<!--<sript>
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+</sript> -->
+
 <body onload="startPush()">
     <div id = "map-grid">
         <div class = "map-grid-item" style = "grid-column: 1/8;grid-row: 1/10;" id="myMap"></div><br/>
@@ -46,6 +52,7 @@
     }
     setTimeout(redirect, 900000);
 </script>
+
 
 
 </body>
