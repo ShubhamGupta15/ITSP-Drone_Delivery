@@ -83,7 +83,8 @@ var map, watchId, userPin;
 function GetMap()
 {
     map = new Microsoft.Maps.Map('#myMap', {
-        credentials:'Auy26xShWKNnx2Ko3hic0uOAMBpK0jy_TtfM06-nuGi3WBeUREIlgzJMLqylaDs8'
+        credentials:'Auy26xShWKNnx2Ko3hic0uOAMBpK0jy_TtfM06-nuGi3WBeUREIlgzJMLqylaDs8',
+        mapTypeId: Microsoft.Maps.MapTypeId.aerial
     });
 }
 /*
@@ -134,30 +135,16 @@ function pushLoc(){
 // adding delivery button activation and flash message
 function deliveryDone(){
   if(reached==2 && alt < 1){
+    console.log("REACHED HERE"); 
     document.getElementById("flash").innerHTML="<p>Your Delivery has reached its destination. Press Delivered button after collecting it.</p>";
 
-<<<<<<< HEAD
     document.getElementById("deliveredButton").innerHTML = "<input type = \"submit\" value=\"Delivered\" name = \"Delivered\" class = \"text\" id = \"Delivered-Button\">";
-=======
-    document.getElementById("deliveredButton").innerHTML = "<input type = /"submit/" value=/"Delivered/" name = /"Delivered/" class = /"text/" id = /"Delivered-Button/">";
->>>>>>> d3d6a26ecb5d9c6cab8e869625c9dc92be193149
   }
   document.getElementById("longitude").innerText = long;
   document.getElementById("latitude").innerText = lat;
   document.getElementById("altitude").innerText = Math.round((alt)*10)/10 + 68.4;  
   trying = setTimeout(deliveryDone, 1000);
 }
-/*console.log("REACHED HERE")
-function asd(){
-
-  document.getElementById("flash").innerHTML="<p>Your Delivery has reached its destination. Press Delivered button after collecting it.</p>"
-
-  document.getElementById("deliveredButton").innerHTML = "<input type = \"submit\" value=\"Delivered\" name = \"Delivered\" class = \"text\" id = \"Delivered-Button\">"
-
-}*/
-
-setTimeout(asd,10000)
-console.log("Timer Set")
 
 function putPin(){
   userPin = new Microsoft.Maps.Pushpin(map.getCenter(), { visible: false });
