@@ -156,7 +156,6 @@ int main(int argc, char **argv)
                     }
                     else if(flag == 2){
                         ROS_INFO("Return Initiated");
-                        firstTime = false;
                     }
                     misson = false;
                 }
@@ -239,7 +238,6 @@ int main(int argc, char **argv)
                         ROS_INFO("Return Initiated");
                     }
                     misson = false;
-                }
                 last_request = ros::Time::now();
             }
             if( arm && !current_state.armed ){

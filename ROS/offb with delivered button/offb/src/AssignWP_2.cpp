@@ -657,8 +657,8 @@ std::vector<mavros_msgs::Waypoint> waypoint_in(std::string hostel,int flag)
             wp_msg[1].param2 = 0;
             wp_msg[1].param3 = 0;
             //wp_msg[1].param4 = 0;
-            wp_msg[1].x_lat = 19.133086;
-            wp_msg[1].y_long = 72.9135277;
+            wp_msg[1].x_lat = 19.1329976;
+            wp_msg[1].y_long = 72.9138136;
             wp_msg[1].z_alt = 25.0;
 
             wp_msg[2].frame = 3;
