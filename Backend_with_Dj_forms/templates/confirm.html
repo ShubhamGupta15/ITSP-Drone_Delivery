@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_content %}
+    <link rel = "stylesheet" type = "text/css" href= "{% static 'CSS/confirm.css' %}">
+{% endblock head_content %}
+
+{% block body_content %}
+
+<header class = "main-heading"><span id = "C">C</span>rusaders</header>
+
+
+<form action = '' method = 'POST'> {% csrf_token %}
+<div id = "confirm-grid">
+
+<div class = "confirm-grid-item" style = "grid-row: 2/3;">{{ form.non_field_errors }}</div>
+
+<div class = "confirm-grid-item text" style = "grid-row: 3/4;">Assigned drone is : {{ droneID }}</div>
+<div class = "confirm-grid-item text" style = "grid-row: 4/5;"> <label for = "{{ form.deployPin.id_for_label }}" class = "text">{{ form.deployPin.label }}</div>
+
+<div class = "confirm-grid-item" style = "grid-row: 5/6;">{{ form.deployPin }}</div>
+<div class = "confirm-grid-item" style = "grid-row: 7/8;">{{ form.deployPin.errors }}</div>
+
+<div class = "confirm-grid-item" style = "grid-row: 8/9;"><input type = "submit" value = "Confirm" name = "Confirm" class = "buttons"></div>
+</div>
+</form>
+<form action = '' method = 'POST'> {% csrf_token %}
+    <div id = "cancel-grid">
+    <div class = "text" style = "grid-row: 3/5;">If you wish to cancel this delivery order, please click on the cancel button below:</div>
+    <div style = "grid-row: 5/6;"><input type = "submit" value = "Cancel" name = "Cancel" class = "buttons"></div>
+    </div>
+
+</form>
+{% endblock body_content %}

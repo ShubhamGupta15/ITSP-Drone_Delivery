@@ -1,0 +1,10 @@
+body {
+    background: url("/static/Resources/BlurredDrone.png");
+    background-size: cover;
+}
+
+.text {
+    font-family: sans-serif;
+    font-size: 19px;
+    color: rgb(245, 245, 245);
+}

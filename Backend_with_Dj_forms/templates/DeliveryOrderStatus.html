@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_content %}
+<link rel="stylesheet" type="text/css" href= "{% static 'CSS/midpage.css' %}">
+<script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+<META HTTP-EQUIV="Pragma" content = "no-cache">
+{% endblock head_content %}
+
+{% block body_content %}
+
+<p class = "text" id = "order-text">
+    
+    {% if busy %}
+
+        No Drones available now. Try later.....
+
+    {% elif invalidURL %}
+
+        Cannot find the page...probably you placed your delivery a long time ago, and now it <br>
+        isn't there in the database.
+
+    {% elif already_seen %}
+
+        You have already seen your delivery details. For security purposes, we cannot show it again. To track your delivery, please fill our track form on the main page.
+
+    {% else %}
+
+        <span style = "color: rgb(255, 0, 0);font-size: 14px;">**PLEASE NOTE: YOU WILL GET TO SEE THIS PAGE ONLY ONCE, SO NOTE DOWN THE DETAILS**</span>
+        <br>
+
+        Your delivery has been recorded.<br> Your Delivery ID is <span id ="deliveryID">{{ id }}</span><br>
+        It will soon arrive at <span id = "hostelNo">{{ hostel }}</span><br>
+
+    If you want to track your delivery, click the 'Track Delivery' link.<br><br>
+
+    <a href = "{% url 'TrackPage' id=id %}" id = "track-link"> Track Delivery </a>    
+    {% endif %}
+</p>
+
+<script type = 'text/javascript' src = "{% static 'JS/app.js' %}"></script>
+<script type = 'text/javascript' src = "{% static 'JS/reload.js' %}"></script>
+
+
+{% endblock body_content %}
+

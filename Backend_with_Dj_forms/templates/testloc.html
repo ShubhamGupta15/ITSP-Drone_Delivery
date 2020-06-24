@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_content %}
+    <title>Crusaders Tracking</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>    
+    <link rel="stylesheet" type="text/css" href= "{% static 'CSS/testloc.css' %}">
+{% endblock head_content %}
+
+{% block body_content %}
+<body onload="startPush()">
+    <div id = "map-grid">
+        <div class = "map-grid-item" style = "grid-column: 1/8;grid-row: 1/10;" id="myMap"></div><br/>
+        <!--<input type="button" value="Start Continuous Tracking" onclick="StartTracking()"/>-->
+        <div class = "map-grid-item" style = "grid-column: 4/5;grid-row: 10/11;" ><input type="button" class = "text" id="stop-track-button" value="Stop Continuous Tracking" onclick="StopTracking()"/></div>
+        <!--<input type="button" value="Put Pin" onclick="putPin()"/>-->
+       <!-- <div class = "map-grid-item" style = "grid-column: 2/4;grid-row: 10/11;"><input type="button" class = "text" id = "push-button" value="Push" onclick="startPush()"/></div> -->
+    
+    </div>
+
+<br>
+<form id ="Delivered" method = "POST" action="{% url 'TrackPage' id=id %}"> {% csrf_token %}
+    <div id = "text-grid">
+    <div class = "text" style = "grid-row: 3/4;">ENTERED DELIVERY ID: <span id = "delID">{{ id }}</span></div>
+    <div class ="text" style = "grid-row: 4/5;">
+        <ul>
+            <li> Latitude: <span id = "latitude"></span>
+            <li> Longitude: <span id = "longitude"></span>
+            <li> Altitude: <span id = "altitude"></span>
+        </ul>
+    </div>
+
+    <div class = "text" id = "flash" style = "grid-row: 5/6;"></div>
+    
+    <div class = "text-grid-item" style = "grid-row: 6/7;" id = "deliveredButton"></div>
+</div>
+</form>
+<script type='text/javascript' src="{% static 'JS/tracking.js' %}"></script>
+<script>
+    function redirect(){
+       window.location.href = "http://127.0.0.1:8000/home/track/thankyou/";
+    }
+    setTimeout(redirect, 900000);
+</script>
+
+
+</body>
+{% endblock body_content %}

@@ -1,0 +1,83 @@
+#myMap{
+    
+    border: 3px solid rgb(245, 245, 245);
+}
+#stop-track-button{
+    background: none;
+    border: 3px solid rgb(245, 245, 245);
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#stop-track-button:hover{
+    border: 3px solid rgb(195, 195, 195);
+    color: rgb(195, 195, 195);
+}
+
+#push-button{
+    background: none;
+    border: 3px solid rgb(245, 245, 245);
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#push-button:hover{
+    border: 3px solid rgb(195, 195, 195);
+    color: rgb(195, 195, 195);    
+}
+
+
+#Delivered-Button{
+    background: none;
+    border-radius: 10px;
+    border: 3px solid rgb(245, 245, 245);
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    color: rgb(245, 245, 245);    
+}
+
+
+#Delivered-Button:hover{
+    border: 3px solid rgb(195, 195, 195);
+    color: rgb(195, 195, 195);    
+}
+
+#map-grid{
+
+    float: left;
+    height: 800px;
+    width: 900px;
+    display: grid;    
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+
+}
+
+.map-grid-item{
+
+    margin-left: 5%;
+    margin-top: 7%;
+}
+
+#text-grid{
+    float: right;
+    height: 800px;    
+    width: 400px;    
+    margin-right: 27.4%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+    
+}
+
+#flash{
+    font-size: 22px;
+}
