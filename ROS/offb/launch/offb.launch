@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <include file="$(find px4)/launch/multi_uav_mavros_sitl.launch"/>
-
-    <node name="Web_Input_Server" pkg="offb" type="Web_Input_Server" output="screen"/>
-    <node name="deploy_UAV0" pkg="offb" type="deploy_UAV0" output="screen"/>
-    <node name="deploy_UAV1" pkg="offb" type="deploy_UAV1" output="screen"/>
-    <node name="deploy_UAV2" pkg="offb" type="deploy_UAV2" output="screen"/>
-</launch>
