@@ -44,6 +44,13 @@ class OrderForm(forms.Form):
             raise forms.ValidationError("PLEASE SELECT A HOSTEL")
         else:
             return enteredhostel
+    def clean_phone(self):
+
+        enteredphone = str(self.cleaned_data.get("phone"))
+        if enteredphone.isnumeric():
+            return enteredphone
+        else:
+            raise forms.ValidationError("Enter a valid phone number")
 
 class TrackForm(forms.Form):
 

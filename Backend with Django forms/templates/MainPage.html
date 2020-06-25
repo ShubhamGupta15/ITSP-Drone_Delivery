@@ -27,9 +27,11 @@
         
         <div class = "grid-order-form-item" style = "grid-row: 8/9;grid-column: 2/3;"><label for = "{{ form.phone.id_for_label }}" class = "text">{{ form.phone.label }}</label></div>        
 
-        <div class = "grid-order-form-item" style = "grid-row: 9/10;grid-column: 2/3;">{{ form.phone }}</div>        
+        <div class = "grid-order-form-item" style = "grid-row: 9/10;grid-column: 2/3;">{{ form.phone }}</div>
+        
+        <div class = "grid-order-form-item" style = "grid-row: 10/11;grid-column: 2/3;">{{ form.phone.errors }}</div>
 
-    <div class = "grid-order-form-item" style = "grid-row: 10/11;grid-column: 2/3;"><input type = 'submit' value = "Place Order" name = "submit-order" id = "SubmitDelivery"></div>
+    <div class = "grid-order-form-item" style = "grid-row: 11/12;grid-column: 2/3;"><input type = 'submit' value = "Place Order" name = "submit-order" id = "SubmitDelivery"></div>
 </form>
 </div>
 
