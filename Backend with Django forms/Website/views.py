@@ -23,6 +23,11 @@ def updateDelStatus(delID):
         obj.save()
         print("Changed Del Status")
 
+def cancelDrone(id):
+    obj = Drone.objects.get(droneID = id)
+    obj.busy = False
+    obj.save()
+
 def MainPageView(request):
 
     order = OrderForm()
@@ -71,6 +76,9 @@ def ConfirmPageView(request):
     request.session['order_placed'] = False
     request.session['seen_status'] = False
 
+    notbusy = threading.Timer(20,cancelDrone,[request.session['assigned_drone']])
+    notbusy.start()
+
     if request.POST.get('Confirm') == 'Confirm':
 
         confirmform = ConfirmForm(request.POST, request = request)
@@ -89,6 +97,8 @@ def ConfirmPageView(request):
             droneTimer.start()
             deliveryTimer = threading.Timer(660,updateDroneStatus,[delivery.deliveryID])
             deliveryTimer.start()
+
+            notbusy.cancel()
 
             messageS = 'Delivery Details - \n' + 'Delivery hostel: ' + delivery.hostel + '\n Delivery ID: ' + str(delivery.deliveryID) + '\n If you want to track your delivery, enter the above delivery ID in our track form.' +'\n 127.0.0.1:8000/home/'
 
