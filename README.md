@@ -32,4 +32,4 @@ How to run simulation:
 Here is an example of our system running:
 https://drive.google.com/file/d/15LzuOwKoyH1I0P72AiTNuyBkBPTJ-sk4/view?usp=sharing
 
-Fair use ubuntu_sim_ros_melodic.sh from dev.px4.io
+Fair use of ubuntu_sim_ros_melodic.sh from dev.px4.io
