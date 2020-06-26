@@ -54,7 +54,7 @@ class OrderForm(forms.Form):
 
 class TrackForm(forms.Form):
 
-    deliveryID = forms.IntegerField(
+    deliveryID = forms.IntegerField(max_value = 99999999,
         localize = True, 
         widget = forms.NumberInput(
             attrs = {'class': 'input-box',
@@ -73,7 +73,7 @@ class TrackForm(forms.Form):
 
 class ConfirmForm(forms.Form):
 
-    deployPin = forms.IntegerField(required = True, label = "Enter pin of the assigned drone:")
+    deployPin = forms.IntegerField(required = True, label = "Enter pin of the assigned drone:", max_value= 999)
 
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop("request")
