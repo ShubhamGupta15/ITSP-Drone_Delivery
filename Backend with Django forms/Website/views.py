@@ -76,7 +76,7 @@ def ConfirmPageView(request):
     request.session['order_placed'] = False
     request.session['seen_status'] = False
 
-    notbusy = threading.Timer(20,cancelDrone,[request.session['assigned_drone']])
+    notbusy = threading.Timer(600,cancelDrone,[request.session['assigned_drone']])
     notbusy.start()
 
     if request.POST.get('Confirm') == 'Confirm':
