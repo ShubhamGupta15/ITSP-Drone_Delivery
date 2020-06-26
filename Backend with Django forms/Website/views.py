@@ -111,6 +111,9 @@ def ConfirmPageView(request):
         drone = Drone.objects.get(droneID = request.session['assigned_drone'])
         drone.busy = False
         drone.save()
+
+        notbusy.cancel()
+
         return HttpResponseRedirect('http://127.0.0.1:8000/home/')
             
 
