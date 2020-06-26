@@ -92,7 +92,7 @@ def ConfirmPageView(request):
 
             m = 'hello' + 'hi'
 
-            messageS = 'Delivery Details - \n' + 'Delivery hostel: ' + delivery.hostel + '\n Delivery ID: ' + str(delivery.deliveryID) + '\n If you want to track your delivery, enter the above delivery ID in our track form. Thank you for choosing us! Have a nice meal!'
+            messageS = 'Delivery Details - \n' + 'Delivery hostel: ' + delivery.hostel + '\n Delivery ID: ' + str(delivery.deliveryID) + '\n If you want to track your delivery, enter the above delivery ID in our track form.' +'\n 127.0.0.1:8000/home/'
 
             send_mail('Delivery Order',messageS,'itspcrusaders@gmail.com',[request.session['email']])          
 
