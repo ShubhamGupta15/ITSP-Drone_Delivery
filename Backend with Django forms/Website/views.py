@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from .models import Delivery_Order, Drone
 from .forms import OrderForm, TrackForm, ConfirmForm
 from datetime import datetime
+from django.core.mail import send_mail
 import threading
 # Create your views here.
 
@@ -37,6 +38,7 @@ def MainPageView(request):
                     assigned_droneID = drone.droneID
                     drone.busy = True
                     drone.HostelNo = order.cleaned_data['hostel']
+                    request.session['email'] = order.cleaned_data['email']
                     drone.save()
                     request.session['assigned_drone'] = assigned_droneID
                     all_busy = False
@@ -86,7 +88,13 @@ def ConfirmPageView(request):
             droneTimer = threading.Timer(1200,updateDroneStatus,[delivery.deliveryID])
             droneTimer.start()
             deliveryTimer = threading.Timer(660,updateDroneStatus,[delivery.deliveryID])
-            deliveryTimer.start()            
+            deliveryTimer.start()
+
+            m = 'hello' + 'hi'
+
+            messageS = 'Delivery Details - \n' + 'Delivery hostel: ' + delivery.hostel + '\n Delivery ID: ' + str(delivery.deliveryID) + '\n If you want to track your delivery, enter the above delivery ID in our track form. Thank you for choosing us! Have a nice meal!'
+
+            send_mail('Delivery Order',messageS,'itspcrusaders@gmail.com',[request.session['email']])          
 
             return HttpResponseRedirect('http://127.0.0.1:8000/home/deliverystatus/%d' % delivery.deliveryID)
         
