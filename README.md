@@ -11,7 +11,7 @@ The working package(with web integration) is offb-working2.
 3. Install rosbridge_suite as directed in the wiki ROS documentation.
 4. Add a folder named offb in catkin_ws/src.
 5. Replace the contents of your offb package with the contents of this offb-single vehicle for single drone system and with offb-multi vehicle for multi drone system..
-6. Copy the launch_rosbridge.sh launch-common.sh and launch-offb.sh to your catkin_ws root.
+6. Copy the launch_rosbridge.sh launch-common.sh and launch-offb.sh in the ROS folder to your catkin_ws root.
 7. Check and modify permisson of all files to executables.
 8. From the worlds folder, add all the contents to both catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and sitl_gazebo/models.
 9. In catkin_ws/src/Firmware/launch/multi_uav_mavros_sitl.launch in line 8 change the world file at the end of the line to iitb2.world from empty.world
