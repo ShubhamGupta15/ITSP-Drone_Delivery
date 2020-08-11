@@ -1,6 +1,6 @@
 # ITSP-Drone_Delivery
 
-*This report contains the code behind a Drone Delivery system innovated in fulfilment of the Institute Technical Summer Project organised by the Institute Technical Council of IIT Bombay*
+*This report contains the code behind a **Drone Delivery system** innovated in fulfilment of the Institute Technical Summer Project organised by the Institute Technical Council of IIT Bombay*
 ## Aim Of The Project
 * Creating a complete Drone Delivery system which can be deployed.
 *Currently the system only caters to the IIT Bombay campus but there are plans to scale it to larger areas in future.*
@@ -9,7 +9,6 @@
 
  ## How to use offb:
  *This folder contains the drone sysem architecture.
- The working package(with web integration) is offb-working2.
 1. Install ROS, Gazebo, mavros, mavlink. For that copy the ubuntu_sim_ros_melodic.sh in your home.
    Now run bash ubuntu_sim_ros_melodic.sh in terminal.
 2. Clone px4 Firmware in catkin_ws/src using git clone https://github.com/PX4/Firmware.git --recursive.
