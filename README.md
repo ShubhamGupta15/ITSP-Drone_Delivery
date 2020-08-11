@@ -14,7 +14,10 @@
    ```
    bash ubuntu_sim_ros_melodic.sh 
    ```
-2. Clone px4 Firmware in catkin_ws/src using git clone https://github.com/PX4/Firmware.git --recursive.
+2. Clone px4 Firmware in catkin_ws/src using 
+```
+git clone https://github.com/PX4/Firmware.git --recursive.
+```
 3. Install rosbridge_suite as directed in the wiki ROS documentation.
 4. Add a folder named offb in catkin_ws/src.
 5. Replace the contents of your offb package with the contents of this offb-single vehicle for single drone system and with offb-multi vehicle for multi drone system..
