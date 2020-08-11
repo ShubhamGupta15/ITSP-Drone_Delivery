@@ -10,7 +10,10 @@
  ## How to use offb:
  *This folder contains the drone sysem architecture.*
 1. Install ROS, Gazebo, mavros, mavlink. For that copy the ubuntu_sim_ros_melodic.sh in your home.
-   Now run bash ubuntu_sim_ros_melodic.sh in terminal.
+   Now run 
+   ```
+   bash ubuntu_sim_ros_melodic.sh 
+   ```
 2. Clone px4 Firmware in catkin_ws/src using git clone https://github.com/PX4/Firmware.git --recursive.
 3. Install rosbridge_suite as directed in the wiki ROS documentation.
 4. Add a folder named offb in catkin_ws/src.
