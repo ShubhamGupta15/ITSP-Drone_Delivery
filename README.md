@@ -28,7 +28,7 @@
  cd ~/catkin_ws/src
  git clone https://github.com/PX4/Firmware.git --recursive.
  ```
- 3. Install rosbridge_suite as directed in the wiki ROS documentation.
+ 3. Install rosbridge_suite from http://wiki.ros.org/rosbridge_suite.
  4. Add a folder named offb in catkin_ws/src.
  ```
  mkdir ~/catkin_ws/src/offb
