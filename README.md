@@ -11,8 +11,11 @@
 * The Website codebase in present in the website folder.
 * The world folder has a approximate 3-D model of the Indian Institute Of Technology Bombay campus.
 *The other folders are not of much importance*
+## System
+*Beow is a basic schematic of our system*
 ![flow](./diagrams/Sender_flow.jpeg)
 ![flow](./diagrams/Drone_and_receiver_flow.jpeg)
+
  ## Simulated Drone system:
  1. Clone the repository.
  ```
@@ -56,7 +59,6 @@
  11. Install QGroundControl.
  12. Setup Done!!
 ## How to run simulation:
-
 1. First launch the rosbridge server using the launch_rosbridge.sh.
 2. In a new terminal launch the ROS setup using launch-offb.sh
 3. Run QGroundControl.
