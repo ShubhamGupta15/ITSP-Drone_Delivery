@@ -1,6 +1,6 @@
 # ITSP-Drone_Delivery
 
-*This report contains the code behind a **Drone Delivery system** innovated in fulfilment of the Institute Technical Summer Project organised by the Institute Technical Council of IIT Bombay*
+*This report contains the code behind a **Drone Delivery system** innovated in fulfilment of the Institute Technical Summer Project organised by the Institute Technical Council of IIT Bombay.*
 ## Aim Of The Project
 * Creating a complete Drone Delivery system which can be deployed.
 *Currently the system only caters to the IIT Bombay campus but there are plans to scale it to larger areas in future.*
@@ -9,9 +9,10 @@
 ## Structure Of Repository
 * The Drone system is present in the Drone folder.
 * The Website codebase in present in the website folder.
-* The world folder has a approximate 3-D model of the Indian Institute Of Technology Bombay campus,
+* The world folder has a approximate 3-D model of the Indian Institute Of Technology Bombay campus.
 *The other folders are not of much importance*
-
+![flow](./diagrams/Sender_flow.jpeg)
+![flow](./diagrams/Drone_and_reciever_flow.jpeg)
  ## Simulated Drone system:
  1. Clone the repository.
  ```
@@ -54,8 +55,7 @@
  ```
  11. Install QGroundControl.
  12. Setup Done!!
-![flow](./diagrams/Sender_flow.jpeg)
-How to run simulation:
+## How to run simulation:
 
 1. First launch the rosbridge server using the launch_rosbridge.sh.
 2. In a new terminal launch the ROS setup using launch-offb.sh
