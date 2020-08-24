@@ -12,7 +12,7 @@
 * The world folder has a approximate 3-D model of the Indian Institute Of Technology Bombay campus.
 *The other folders are not of much importance*
 ![flow](./diagrams/Sender_flow.jpeg)
-![flow](./diagrams/Drone_and_reciever_flow.jpeg)
+![flow](./diagrams/Drone_and_receiver_flow.jpeg)
  ## Simulated Drone system:
  1. Clone the repository.
  ```
