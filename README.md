@@ -54,7 +54,7 @@
  ```
  11. Install QGroundControl.
  12. Setup Done!!
-![flow](./diagrams/Sender\ flow.jpeg)
+![flow](./diagrams/Sender_flow.jpeg)
 How to run simulation:
 
 1. First launch the rosbridge server using the launch_rosbridge.sh.
