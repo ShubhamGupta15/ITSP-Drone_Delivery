@@ -16,7 +16,7 @@
 ![flow](./diagrams/Sender_flow.jpeg)
 ![flow](./diagrams/Drone_and_receiver_flow.jpeg)
 
- ## Simulated Drone system:
+ ## Simulated system Setup:
  1. Clone the repository.
  ```
  git clone https://github.com/ShubhamGupta15/ITSP-Drone_Delivery.git
@@ -62,9 +62,9 @@
  12. Install QGroundControl.
  13. Setup Done!!
 
-## WEbsite Setup
-The website is based a Django backend along with fontend using HTML,CSS and Javascript.
-To see how the setup works see [here](./Website/Backend_Instructions.md)
+## Website Setup
+The website is based a Django backend along with fontend using HTML,CSS and Javascript.  
+To see how the setup works see [the website instructions](./Website/Backend_Instructions.md)
 ## How to run simulation:
 1. First launch the rosbridge server using the launch_rosbridge.sh.
 ```
