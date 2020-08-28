@@ -12,7 +12,7 @@
 * The world folder has a approximate 3-D model of the Indian Institute Of Technology Bombay campus.
 *The other folders are not of much importance*
 ## System
-*Beow is a basic schematic of our system*
+*Below is a basic schematic of our system*
 ![flow](./diagrams/Sender_flow.jpeg)
 ![flow](./diagrams/Drone_and_receiver_flow.jpeg)
 
@@ -24,7 +24,7 @@
  2. To install ROS, Gazebo, mavros, mavlink run the script ubuntu_sim_ros_melodic.sh.
      
     ```
-    cd to ITSP-Drone_Delivery
+    cd  ./ITSP-Drone_Delivery
     bash ubuntu_sim_ros_melodic.sh 
     ```
  2. Clone px4 Firmware in catkin_ws/src using 
