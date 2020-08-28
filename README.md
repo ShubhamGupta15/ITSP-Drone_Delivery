@@ -65,11 +65,11 @@
 1. First launch the rosbridge server using the launch_rosbridge.sh.
 ```
 cd ~/catkin_ws
-./ launch_rosbridge.sh
+./launch_rosbridge.sh
 ```
 2. In a new terminal launch the ROS setup using launch-offb.sh
 ```
-./ launch-offb.sh
+./launch-offb.sh
 ```
 3. Run QGroundControl.
 4. Start a Django sever in another terminal. Type the IP 127.0.0.1:8080 in the browser. This will take you to the home page. 
