@@ -49,12 +49,11 @@
  chmod +x launch-offb.sh
  ```
  9. From the worlds folder, add all the contents to both catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and sitl_gazebo/models.
- 10. Change the world file at the end of the line to iitb2.world from empty.world
+ 10. Change the world file at the end of the line 8 to iitb2.world from empty.world
  ````
  cd ~/catkin_ws/src/Firmware/launch
  gedit multi_uav_mavros_sitl.launch
- ````
- Then do the required changes in line 8
+ ```` 
  11. Run catkin build. (not catkin_make)
  ```
  cd ~/catkin_ws
