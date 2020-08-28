@@ -26,37 +26,37 @@
  cd  ./ITSP-Drone_Delivery
  bash ubuntu_sim_ros_melodic.sh 
  ```
- 2. Clone px4 Firmware in catkin_ws/src using 
+ 3. Clone px4 Firmware in catkin_ws/src using 
  ```
  cd ~/catkin_ws/src
  git clone https://github.com/PX4/Firmware.git --recursive.
  ```
- 3. Install rosbridge_suite from http://wiki.ros.org/rosbridge_suite.
- 4. Add a folder named offb in catkin_ws/src.
+ 4. Install rosbridge_suite from http://wiki.ros.org/rosbridge_suite.
+ 5. Add a folder named offb in catkin_ws/src.
  ```
  mkdir ~/catkin_ws/src/offb
  ```
- 5. Replace the contents of your offb package with the contents of this offb-single vehicle for single drone system and with offb-multi vehicle for multi drone system..
- 6. Copy the launch_rosbridge.sh launch-common.sh and launch-offb.sh in the ROS folder to your catkin_ws root.
+ 6. Replace the contents of your offb package with the contents of this offb-single vehicle for single drone system and with offb-multi vehicle for multi drone system..
+ 7. Copy the launch_rosbridge.sh launch-common.sh and launch-offb.sh in the ROS folder to your catkin_ws root.
  ```
  cd ~/catkin_ws
  cp launch_rosbridge.sh launch-common.sh launch-offb.sh 
  ```
- 7. Check and modify permisson of all files to executables.
+ 8. Check and modify permisson of all files to executables.
  ```
  chmod +x launch_rosbridge.sh
  chmod +x launch-common.sh
  chmod +x launch-offb.sh
  ```
- 8. From the worlds folder, add all the contents to both catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and sitl_gazebo/models.
- 9. In catkin_ws/src/Firmware/launch/multi_uav_mavros_sitl.launch in line 8 change the world file at the end of the line to iitb2.world from empty.world
- 10. Run catkin build. (not catkin_make)
+ 9. From the worlds folder, add all the contents to both catkin_ws/src/Firmware/Tools/sitl_gazebo/worlds, and sitl_gazebo/models.
+ 10. In catkin_ws/src/Firmware/launch/multi_uav_mavros_sitl.launch in line 8 change the world file at the end of the line to iitb2.world from empty.world
+ 11. Run catkin build. (not catkin_make)
  ```
  cd ~/catkin_ws
  catkin build
  ```
- 11. Install QGroundControl.
- 12. Setup Done!!
+ 12. Install QGroundControl.
+ 13. Setup Done!!
 ## How to run simulation:
 1. First launch the rosbridge server using the launch_rosbridge.sh.
 2. In a new terminal launch the ROS setup using launch-offb.sh
