@@ -22,11 +22,10 @@
  git clone https://github.com/ShubhamGupta15/ITSP-Drone_Delivery.git
  ```
  2. To install ROS, Gazebo, mavros, mavlink run the script ubuntu_sim_ros_melodic.sh.
-     
-    ```
-    cd  ./ITSP-Drone_Delivery
-    bash ubuntu_sim_ros_melodic.sh 
-    ```
+ ```
+ cd  ./ITSP-Drone_Delivery
+ bash ubuntu_sim_ros_melodic.sh 
+ ```
  2. Clone px4 Firmware in catkin_ws/src using 
  ```
  cd ~/catkin_ws/src
