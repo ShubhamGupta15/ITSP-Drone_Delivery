@@ -61,6 +61,10 @@
  ```
  12. Install QGroundControl.
  13. Setup Done!!
+
+## WEbsite Setup
+The website is based a Django backend along with fontend using HTML,CSS and Javascript.
+To see how the setup works see [here](./Website/Backend_Instructions.md)
 ## How to run simulation:
 1. First launch the rosbridge server using the launch_rosbridge.sh.
 ```
