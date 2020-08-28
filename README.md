@@ -59,13 +59,20 @@
  13. Setup Done!!
 ## How to run simulation:
 1. First launch the rosbridge server using the launch_rosbridge.sh.
+```
+cd ~\catkin_ws
+./ launch_rosbridge.sh
+```
 2. In a new terminal launch the ROS setup using launch-offb.sh
+```
+./ launch-offb.sh
+```
 3. Run QGroundControl.
-4. Open the website in the websie folder of the repo.
-5. Enter the commands to the delivery form.
+4. Start a Django sever in another terminal. Type the0 IP 127.0.0.1:8080 in the browser. This will take you to the home page. 
+5. Fill the delivery form and submit.
 6. The simulation and the QGroundControl will recieve commands and the misson will run.
 
 Here is an example of our system running:
 https://drive.google.com/file/d/15LzuOwKoyH1I0P72AiTNuyBkBPTJ-sk4/view?usp=sharing
-
+## Disclaimer
 Fair use of ubuntu_sim_ros_melodic.sh from dev.px4.io
